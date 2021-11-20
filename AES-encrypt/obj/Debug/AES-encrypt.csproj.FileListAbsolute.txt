@@ -9,3 +9,14 @@ D:\winform\AES-encrypt\AES-encrypt\obj\Debug\AES-encrypt.csproj.GenerateResource
 D:\winform\AES-encrypt\AES-encrypt\obj\Debug\AES-encrypt.csproj.CoreCompileInputs.cache
 D:\winform\AES-encrypt\AES-encrypt\obj\Debug\AES-encrypt.exe
 D:\winform\AES-encrypt\AES-encrypt\obj\Debug\AES-encrypt.pdb
+D:\Document\class Material\cơ sở an toàn bảo mật thông tin\project\AES-encrypt\AES-encrypt\bin\Debug\AES-encrypt.exe.config
+D:\Document\class Material\cơ sở an toàn bảo mật thông tin\project\AES-encrypt\AES-encrypt\bin\Debug\AES-encrypt.exe
+D:\Document\class Material\cơ sở an toàn bảo mật thông tin\project\AES-encrypt\AES-encrypt\bin\Debug\AES-encrypt.pdb
+D:\Document\class Material\cơ sở an toàn bảo mật thông tin\project\AES-encrypt\AES-encrypt\obj\Debug\AES-encrypt.csproj.AssemblyReference.cache
+D:\Document\class Material\cơ sở an toàn bảo mật thông tin\project\AES-encrypt\AES-encrypt\obj\Debug\AES-encrypt.csproj.SuggestedBindingRedirects.cache
+D:\Document\class Material\cơ sở an toàn bảo mật thông tin\project\AES-encrypt\AES-encrypt\obj\Debug\AES_encrypt.Form1.resources
+D:\Document\class Material\cơ sở an toàn bảo mật thông tin\project\AES-encrypt\AES-encrypt\obj\Debug\AES_encrypt.Properties.Resources.resources
+D:\Document\class Material\cơ sở an toàn bảo mật thông tin\project\AES-encrypt\AES-encrypt\obj\Debug\AES-encrypt.csproj.GenerateResource.cache
+D:\Document\class Material\cơ sở an toàn bảo mật thông tin\project\AES-encrypt\AES-encrypt\obj\Debug\AES-encrypt.csproj.CoreCompileInputs.cache
+D:\Document\class Material\cơ sở an toàn bảo mật thông tin\project\AES-encrypt\AES-encrypt\obj\Debug\AES-encrypt.exe
+D:\Document\class Material\cơ sở an toàn bảo mật thông tin\project\AES-encrypt\AES-encrypt\obj\Debug\AES-encrypt.pdb
