@@ -16,5 +16,15 @@ namespace AES_encrypt
         {
             InitializeComponent();
         }
+
+        private void btMaHoa_Click(object sender, EventArgs e)
+        {
+            tbBanMa.Text = "abc";
+        }
+
+        private void btGiaiMa_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

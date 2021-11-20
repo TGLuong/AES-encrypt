@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "54c351a1-df08-4817-9927-0c74de28b23b": {
+      "ProjectGuid": "54c351a1-df08-4817-9927-0c74de28b23b",
+      "DisplayName": "AES-encrypt",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

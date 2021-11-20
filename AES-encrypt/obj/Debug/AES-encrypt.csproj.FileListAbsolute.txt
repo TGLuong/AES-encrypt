@@ -1,0 +1,11 @@
+D:\winform\AES-encrypt\AES-encrypt\bin\Debug\AES-encrypt.exe.config
+D:\winform\AES-encrypt\AES-encrypt\bin\Debug\AES-encrypt.exe
+D:\winform\AES-encrypt\AES-encrypt\bin\Debug\AES-encrypt.pdb
+D:\winform\AES-encrypt\AES-encrypt\obj\Debug\AES-encrypt.csproj.AssemblyReference.cache
+D:\winform\AES-encrypt\AES-encrypt\obj\Debug\AES-encrypt.csproj.SuggestedBindingRedirects.cache
+D:\winform\AES-encrypt\AES-encrypt\obj\Debug\AES_encrypt.Form1.resources
+D:\winform\AES-encrypt\AES-encrypt\obj\Debug\AES_encrypt.Properties.Resources.resources
+D:\winform\AES-encrypt\AES-encrypt\obj\Debug\AES-encrypt.csproj.GenerateResource.cache
+D:\winform\AES-encrypt\AES-encrypt\obj\Debug\AES-encrypt.csproj.CoreCompileInputs.cache
+D:\winform\AES-encrypt\AES-encrypt\obj\Debug\AES-encrypt.exe
+D:\winform\AES-encrypt\AES-encrypt\obj\Debug\AES-encrypt.pdb
