@@ -12,7 +12,7 @@ namespace AES_encrypt
 {
     public partial class Form1 : Form
     {
-        private byte[,] sbox = new byte[16, 16] {
+        private byte[,] sbox = {
             {0x63,0x7c,0x77,0x7b,0xf2,0x6b,0x6f,0xc5,0x30,0x01,0x67,0x2b,0xfe,0xd7,0xab,0x76},
             {0xca,0x82,0xc9,0x7d,0xfa,0x59,0x47,0xf0,0xad,0xd4,0xa2,0xaf,0x9c,0xa4,0x72,0xc0},
             {0xb7,0xfd,0x93,0x26,0x36,0x3f,0xf7,0xcc,0x34,0xa5,0xe5,0xf1,0x71,0xd8,0x31,0x15},
@@ -31,7 +31,7 @@ namespace AES_encrypt
             {0x8c,0xa1,0x89,0x0d,0xbf,0xe6,0x42,0x68,0x41,0x99,0x2d,0x0f,0xb0,0x54,0xbb,0x16},
         };
 
-        private byte[,] rsbox = new byte[16, 16] {
+        private byte[,] rsbox = {
             {0x52,0x09,0x6a,0xd5,0x30,0x36,0xa5,0x38,0xbf,0x40,0xa3,0x9e,0x81,0xf3,0xd7,0xfb},
             {0x7c,0xe3,0x39,0x82,0x9b,0x2f,0xff,0x87,0x34,0x8e,0x43,0x44,0xc4,0xde,0xe9,0xcb},
             {0x54,0x7b,0x94,0x32,0xa6,0xc2,0x23,0x3d,0xee,0x4c,0x95,0x0b,0x42,0xfa,0xc3,0x4e},
@@ -50,12 +50,17 @@ namespace AES_encrypt
             {0x17,0x2b,0x04,0x7e,0xba,0x77,0xd6,0x26,0xe1,0x69,0x14,0x63,0x55,0x21,0x0c,0x7d},
         };
 
-        private byte[,] state = new byte[4, 4] {
-            {1,2,3,4 },
-            {1,2,3,4 },
-            {1,2,3,4 },
-            {1,2,3,4 }
+        private byte[,] state =
+        {
+            {0,0,0,0 },
+            {0,0,0,0 },
+            {0,0,0,0 },
+            {0,0,0,0 }
         };
+
+
+        
+
         public Form1()
         {
             InitializeComponent();
@@ -63,7 +68,7 @@ namespace AES_encrypt
 
         private void btMaHoa_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("abc ");
+            SubBytes();
         }
 
         private void btGiaiMa_Click(object sender, EventArgs e)
@@ -71,5 +76,32 @@ namespace AES_encrypt
 
         }
         
+        private void SubBytes()
+        {
+            for ( int i = 0; i < 4; i++)
+            {
+                for( int j = 0; j < 4; j++)
+                {
+                    int x = state[i, j] & 0xf;
+                    int y = (state[i, j] & 0xf0) >> 4;
+                    state[i, j] = sbox[x, y];
+                }
+            }
+            StateLog();
+        }
+
+        private void StateLog()
+        {
+            Console.WriteLine("");
+            for( int i = 0; i < 4; i++)
+            {
+                for( int j = 0; j < 4; j++)
+                {
+                    Console.Write($"{state[i,j],3:x}");
+                }
+                Console.WriteLine("");
+            }
+            Console.WriteLine("");
+        }
     }
 }
