@@ -6,5 +6,6 @@
 - https://github.com/cloudmadeofcandy/AES_implementation
 - https://en.wikipedia.org/wiki/Advanced_Encryption_Standard
 - https://en.wikipedia.org/wiki/Rijndael_S-box
+- https://en.wikipedia.org/wiki/Rijndael_MixColumns
 ### Round Constance 192bit - 256bit
 - https://crypto.stackexchange.com/questions/81712/rcon-for-aes-192-and-256
