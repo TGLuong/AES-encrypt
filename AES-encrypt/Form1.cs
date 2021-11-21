@@ -52,10 +52,10 @@ namespace AES_encrypt
 
         private byte[,] state =
         {
-            {0,0,0,0 },
-            {0,0,0,0 },
-            {0,0,0,0 },
-            {0,0,0,0 }
+            {0x00,0x00,0x00,0x00 },
+            {1,2,3,4 },
+            {1,2,3,4 },
+            {1,2,3,4 }
         };
 
 
@@ -68,7 +68,9 @@ namespace AES_encrypt
 
         private void btMaHoa_Click(object sender, EventArgs e)
         {
-            SubBytes();
+            
+            
+            
         }
 
         private void btGiaiMa_Click(object sender, EventArgs e)
@@ -86,6 +88,25 @@ namespace AES_encrypt
                     int y = (state[i, j] & 0xf0) >> 4;
                     state[i, j] = sbox[x, y];
                 }
+            }
+            StateLog();
+        }
+        private void ShiftRows()
+        {
+            Shift(1, 1);
+            Shift(2, 2);
+            Shift(3, 3);
+        }
+
+        private void Shift(int NRow, int shift)
+        {
+            for(int i = 1; i <= shift; i++)
+            {
+                byte temp = state[NRow, 0];
+                state[NRow, 0] = state[NRow, 1];
+                state[NRow, 1] = state[NRow, 2];
+                state[NRow, 2] = state[NRow, 3];
+                state[NRow, 3] = temp;
             }
             StateLog();
         }

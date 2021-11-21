@@ -45,9 +45,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tbBanRo = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.rd128 = new System.Windows.Forms.RadioButton();
-            this.rd192 = new System.Windows.Forms.RadioButton();
             this.rd256 = new System.Windows.Forms.RadioButton();
+            this.rd192 = new System.Windows.Forms.RadioButton();
+            this.rd128 = new System.Windows.Forms.RadioButton();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.ETime = new System.Windows.Forms.Label();
+            this.DTime = new System.Windows.Forms.Label();
             this.panelTitle.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -203,6 +207,26 @@
             this.panel1.Size = new System.Drawing.Size(427, 65);
             this.panel1.TabIndex = 28;
             // 
+            // rd256
+            // 
+            this.rd256.AutoSize = true;
+            this.rd256.Location = new System.Drawing.Point(297, 23);
+            this.rd256.Name = "rd256";
+            this.rd256.Size = new System.Drawing.Size(100, 20);
+            this.rd256.TabIndex = 2;
+            this.rd256.Text = "Khoá 256 bit";
+            this.rd256.UseVisualStyleBackColor = true;
+            // 
+            // rd192
+            // 
+            this.rd192.AutoSize = true;
+            this.rd192.Location = new System.Drawing.Point(162, 22);
+            this.rd192.Name = "rd192";
+            this.rd192.Size = new System.Drawing.Size(100, 20);
+            this.rd192.TabIndex = 1;
+            this.rd192.Text = "Khoá 192 bit";
+            this.rd192.UseVisualStyleBackColor = true;
+            // 
             // rd128
             // 
             this.rd128.AutoSize = true;
@@ -215,31 +239,49 @@
             this.rd128.Text = "Khoá 128 bit";
             this.rd128.UseVisualStyleBackColor = true;
             // 
-            // rd192
+            // label8
             // 
-            this.rd192.AutoSize = true;
-            this.rd192.Location = new System.Drawing.Point(162, 22);
-            this.rd192.Name = "rd192";
-            this.rd192.Size = new System.Drawing.Size(100, 20);
-            this.rd192.TabIndex = 1;
-            this.rd192.Text = "Khoá 192 bit";
-            this.rd192.UseVisualStyleBackColor = true;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(60, 399);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(63, 16);
+            this.label8.TabIndex = 29;
+            this.label8.Text = "Thời gian";
             // 
-            // rd256
+            // label9
             // 
-            this.rd256.AutoSize = true;
-            this.rd256.Location = new System.Drawing.Point(297, 23);
-            this.rd256.Name = "rd256";
-            this.rd256.Size = new System.Drawing.Size(100, 20);
-            this.rd256.TabIndex = 2;
-            this.rd256.Text = "Khoá 256 bit";
-            this.rd256.UseVisualStyleBackColor = true;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(513, 399);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(63, 16);
+            this.label9.TabIndex = 30;
+            this.label9.Text = "Thời gian";
+            // 
+            // ETime
+            // 
+            this.ETime.AutoSize = true;
+            this.ETime.Location = new System.Drawing.Point(152, 399);
+            this.ETime.Name = "ETime";
+            this.ETime.Size = new System.Drawing.Size(0, 16);
+            this.ETime.TabIndex = 31;
+            // 
+            // DTime
+            // 
+            this.DTime.AutoSize = true;
+            this.DTime.Location = new System.Drawing.Point(617, 399);
+            this.DTime.Name = "DTime";
+            this.DTime.Size = new System.Drawing.Size(0, 16);
+            this.DTime.TabIndex = 32;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(921, 411);
+            this.ClientSize = new System.Drawing.Size(921, 452);
+            this.Controls.Add(this.DTime);
+            this.Controls.Add(this.ETime);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btGiaiMa);
             this.Controls.Add(this.tbDKhoa);
@@ -288,6 +330,10 @@
         private System.Windows.Forms.RadioButton rd256;
         private System.Windows.Forms.RadioButton rd192;
         private System.Windows.Forms.RadioButton rd128;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label ETime;
+        private System.Windows.Forms.Label DTime;
     }
 }
 
