@@ -299,6 +299,7 @@
             this.Controls.Add(this.tbBanRo);
             this.Controls.Add(this.panelTitle);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.panelTitle.ResumeLayout(false);
             this.panelTitle.PerformLayout();
