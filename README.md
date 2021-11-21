@@ -7,5 +7,6 @@
 - https://en.wikipedia.org/wiki/Advanced_Encryption_Standard
 - https://en.wikipedia.org/wiki/Rijndael_S-box
 - https://en.wikipedia.org/wiki/Rijndael_MixColumns
+- https://www.brainkart.com/article/AES-Key-Expansion_8410
 ### Round Constance 192bit - 256bit
 - https://crypto.stackexchange.com/questions/81712/rcon-for-aes-192-and-256
