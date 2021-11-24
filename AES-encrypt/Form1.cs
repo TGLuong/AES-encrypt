@@ -50,13 +50,14 @@ namespace AES_encrypt
 
         private byte[,] state =
         {
-            {1,2,3,4 },
-            {1,2,3,4 },
-            {1,2,3,4 },
-            {1,2,3,4 }
+            {0x32, 0x88, 0x31, 0xe0},
+            {0x43, 0x5a, 0x31, 0x37},
+            {0xf6, 0x30, 0x98, 0x07},
+            {0xa8, 0x8d, 0xa2, 0x34}
         };
 
-        private byte[,] output;
+        private byte[] key = { 0x2b, 0x7e, 0x15, 0x16, 0x28, 0xae, 0xd2, 0xa6, 0xab, 0xf7, 0x15, 0x88, 0x09, 0xcf, 0x4f, 0x3c };
+
 
         private byte[,] expanKey;
         
@@ -67,20 +68,15 @@ namespace AES_encrypt
 
         private void btMaHoa_Click(object sender, EventArgs e)
         {
-            if (rd128.Checked) mode128(GetText());
+            if (rd128.Checked) mode128();
             else if (rd192.Checked) mode192();
             else if (rd256.Checked) mode256();
         }
 
-        private string GetText()
-        {
-            return tbBanMa.Text;
-        }
 
-        private void mode128 (string text)
+        private void mode128 ()
         {
             tbKhoa.Text = "0123456789abcdef";
-            KeyExpantion(4, 10);
             int do_dai_khoa = tbKhoa.Text.Length;
             if(do_dai_khoa != 16)
             {
@@ -88,30 +84,55 @@ namespace AES_encrypt
             }
             else
             {
-                AddRoundKey(0);
-                for(int i = 1; i <= 9; i++)
+                DateTime time1 = DateTime.Now;
+                KeyExpantion(4, 10);
+                int index = 0;
+                tbBanMa.Text = "";
+                while (index < tbBanRo.Text.Length)
                 {
+                    for(int m = 0; m < 4; m++)
+                    {
+                        for(int n = 0; n < 4; n++)
+                        {
+                            if(index < tbBanRo.Text.Length)
+                            {
+                                state[m,n] = (byte)tbBanRo.Text[index];
+                                index++;
+                            }
+                            else
+                            {
+                                state[m, n] = 0x00;
+                            }
+                        }
+                    }
+                    AddRoundKey(0);
+                    for (int i = 1; i <= 9; i++)
+                    {
+                        SubBytes();
+                        ShiftRows();
+                        MixColumns();
+                        AddRoundKey(i * 4);
+                    }
                     SubBytes();
                     ShiftRows();
-                    MixColumns();
-                    AddRoundKey(i * 4);
-                }
-                SubBytes();
-                ShiftRows();
-                AddRoundKey(40);
-                for(int i = 1; i < 4; i++)
-                {
-                    for(int j = 1; j < 4; j++)
+                    AddRoundKey(40);
+                    for (int i = 1; i < 4; i++)
                     {
-                        tbBanMa.Text += Convert.ToChar(state[i, j]);
+                        for (int j = 1; j < 4; j++)
+                        {
+                            tbBanMa.Text += Convert.ToChar(state[i, j]);
+                        }
                     }
                 }
+                DateTime time2 = DateTime.Now;
+                TimeSpan span = time2.Subtract(time1);
+                ETime.Text = ""+span.TotalSeconds+" Giây";
             }
         }
 
         private void mode192()
         {
-            KeyExpantion(6, 12);
+            tbKhoa.Text = "0123456789abcdef12345678";
             int do_dai_khoa = tbKhoa.Text.Length;
             if (do_dai_khoa != 24)
             {
@@ -119,13 +140,55 @@ namespace AES_encrypt
             }
             else
             {
-
+                DateTime time1 = DateTime.Now;
+                KeyExpantion(6, 12);
+                int index = 0;
+                tbBanMa.Text = "";
+                while (index < tbBanRo.Text.Length)
+                {
+                    for (int m = 0; m < 4; m++)
+                    {
+                        for (int n = 0; n < 4; n++)
+                        {
+                            if (index < tbBanRo.Text.Length)
+                            {
+                                state[m, n] = (byte)tbBanRo.Text[index];
+                                index++;
+                            }
+                            else
+                            {
+                                state[m, n] = 0x00;
+                            }
+                        }
+                    }
+                    AddRoundKey(0);
+                    for (int i = 1; i <= 11; i++)
+                    {
+                        SubBytes();
+                        ShiftRows();
+                        MixColumns();
+                        AddRoundKey(i * 4);
+                    }
+                    SubBytes();
+                    ShiftRows();
+                    AddRoundKey(48);
+                    for (int i = 1; i < 4; i++)
+                    {
+                        for (int j = 1; j < 4; j++)
+                        {
+                            tbBanMa.Text += Convert.ToChar(state[i, j]);
+                        }
+                    }
+                }
+                DateTime time2 = DateTime.Now;
+                TimeSpan span = time2.Subtract(time1);
+                ETime.Text = "" + span.TotalSeconds + " Giây";
             }
         }
 
         private void mode256()
         {
-            KeyExpantion(8, 14);
+            tbKhoa.Text = "0123456789abcdef1234567812345678";
             int do_dai_khoa = tbKhoa.Text.Length;
             if (do_dai_khoa != 32)
             {
@@ -133,7 +196,49 @@ namespace AES_encrypt
             }
             else
             {
-                
+                DateTime time1 = DateTime.Now;
+                KeyExpantion(8, 14);
+                int index = 0;
+                tbBanMa.Text = "";
+                while (index < tbBanRo.Text.Length)
+                {
+                    for (int m = 0; m < 4; m++)
+                    {
+                        for (int n = 0; n < 4; n++)
+                        {
+                            if (index < tbBanRo.Text.Length)
+                            {
+                                state[m, n] = (byte)tbBanRo.Text[index];
+                                index++;
+                            }
+                            else
+                            {
+                                state[m, n] = 0x00;
+                            }
+                        }
+                    }
+                    AddRoundKey(0);
+                    for (int i = 1; i <= 13; i++)
+                    {
+                        SubBytes();
+                        ShiftRows();
+                        MixColumns();
+                        AddRoundKey(i * 4);
+                    }
+                    SubBytes();
+                    ShiftRows();
+                    AddRoundKey(56);
+                    for (int i = 1; i < 4; i++)
+                    {
+                        for (int j = 1; j < 4; j++)
+                        {
+                            tbBanMa.Text += Convert.ToChar(state[i, j]);
+                        }
+                    }
+                }
+                DateTime time2 = DateTime.Now;
+                TimeSpan span = time2.Subtract(time1);
+                ETime.Text = "" + span.TotalSeconds + " Giây";
             }
         }
 
@@ -153,7 +258,7 @@ namespace AES_encrypt
             }
         }
 
-        private byte SubByte(byte alterByte)
+        private byte SubByte(byte alterByte) 
         {
             int x = alterByte & 0xf;
             int y = (alterByte & 0xf0) >> 4;
@@ -182,20 +287,24 @@ namespace AES_encrypt
 
         private void MixColumns()
         {
-            byte[,] subMatrix = new byte[4, 4]
+            for (int i = 0; i < 4; i++)
             {
-                {2,3,1,1 },
-                {1,2,3,1 },
-                {1,1,2,3 },
-                {3,1,1,2 }
-            };
-            for(int i = 0; i < 4; i++)
-            {
+                byte[] a = new byte[4];
+                byte[] b = new byte[4];
                 byte[] result = new byte[4];
-                result[0] = (byte)((2 * state[0,i]) ^ (3 * state[1,i]) ^ state[2,i] ^ state[3,i]);
-                result[1] = (byte)(state[0,i] ^ (2 * state[1,i]) ^ (3 * state[2,i]) ^ state[3,i]);
-                result[2] = (byte)(state[0,i] ^ state[1,i] ^ (2 * state[2,i]) ^ (3 * state[3,i]));
-                result[3] = (byte)((3 * state[0,i]) ^ state[1,i] ^ state[2,i] ^ (2 * state[3,i]));
+
+                for(int c = 0; c < 4; c++)
+                {
+                    a[c] = state[c, i];
+                    byte h = (byte)((state[c, i] >> 7) & 1);
+                    b[c] = (byte)(state[c, i] << 1);
+                    b[c] = (byte)(b[c] ^ h * 0x1b);
+                }
+
+                result[0] = (byte)((b[0] ^ a[3] ^ a[2] ^ b[1] ^ a[1]) % 256);
+                result[1] = (byte)((b[1] ^ a[0] ^ a[3] ^ b[2] ^ a[2]) % 256);
+                result[2] = (byte)((b[2] ^ a[1] ^ a[0] ^ b[3] ^ a[3]) % 256);
+                result[3] = (byte)((b[3] ^ a[2] ^ a[1] ^ b[0] ^ a[0]) % 256);
                 state[0, i] = result[0];
                 state[1, i] = result[1];
                 state[2, i] = result[2];
@@ -245,9 +354,9 @@ namespace AES_encrypt
                     temp[3] = SubByte(temp[3]);
                 }
                 expanKey[0, i] = (byte)(expanKey[0, i - Nk] ^ temp[0]);
-                expanKey[1, i] = (byte)(expanKey[0, i - Nk] ^ temp[1]);
-                expanKey[2, i] = (byte)(expanKey[0, i - Nk] ^ temp[2]);
-                expanKey[3, i] = (byte)(expanKey[0, i - Nk] ^ temp[3]);
+                expanKey[1, i] = (byte)(expanKey[1, i - Nk] ^ temp[1]);
+                expanKey[2, i] = (byte)(expanKey[2, i - Nk] ^ temp[2]);
+                expanKey[3, i] = (byte)(expanKey[3, i - Nk] ^ temp[3]);
                 i++;
             }
             //ExpanLog(Nr);
@@ -286,7 +395,7 @@ namespace AES_encrypt
             Console.WriteLine("");
             for (int i = 0; i < 4; i++)
             {
-                for (int j = 0; j < Nr * 4; j++)
+                for (int j = 0; j < (Nr + 1) * 4; j++)
                 {
                     Console.Write($"{expanKey[i, j],3:x}");
                 }

@@ -48,10 +48,10 @@
             this.rd256 = new System.Windows.Forms.RadioButton();
             this.rd192 = new System.Windows.Forms.RadioButton();
             this.rd128 = new System.Windows.Forms.RadioButton();
-            this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.ETime = new System.Windows.Forms.Label();
             this.DTime = new System.Windows.Forms.Label();
+            this.ETime = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.panelTitle.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -63,7 +63,7 @@
             this.panelTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitle.Location = new System.Drawing.Point(0, 0);
             this.panelTitle.Name = "panelTitle";
-            this.panelTitle.Size = new System.Drawing.Size(921, 75);
+            this.panelTitle.Size = new System.Drawing.Size(1026, 75);
             this.panelTitle.TabIndex = 1;
             // 
             // label1
@@ -72,7 +72,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(280, 22);
+            this.label1.Location = new System.Drawing.Point(333, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(388, 31);
             this.label1.TabIndex = 0;
@@ -81,9 +81,9 @@
             // 
             // btGiaiMa
             // 
-            this.btGiaiMa.Location = new System.Drawing.Point(590, 284);
+            this.btGiaiMa.Location = new System.Drawing.Point(590, 397);
             this.btGiaiMa.Name = "btGiaiMa";
-            this.btGiaiMa.Size = new System.Drawing.Size(75, 23);
+            this.btGiaiMa.Size = new System.Drawing.Size(113, 37);
             this.btGiaiMa.TabIndex = 27;
             this.btGiaiMa.Text = "Giải Mã";
             this.btGiaiMa.UseVisualStyleBackColor = true;
@@ -91,30 +91,38 @@
             // 
             // tbDKhoa
             // 
-            this.tbDKhoa.Location = new System.Drawing.Point(590, 231);
+            this.tbDKhoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbDKhoa.Location = new System.Drawing.Point(590, 334);
+            this.tbDKhoa.Multiline = true;
             this.tbDKhoa.Name = "tbDKhoa";
-            this.tbDKhoa.Size = new System.Drawing.Size(269, 22);
+            this.tbDKhoa.Size = new System.Drawing.Size(369, 40);
             this.tbDKhoa.TabIndex = 26;
             // 
             // tbDBanRo
             // 
-            this.tbDBanRo.Location = new System.Drawing.Point(590, 341);
+            this.tbDBanRo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbDBanRo.Location = new System.Drawing.Point(590, 523);
+            this.tbDBanRo.Multiline = true;
             this.tbDBanRo.Name = "tbDBanRo";
             this.tbDBanRo.ReadOnly = true;
-            this.tbDBanRo.Size = new System.Drawing.Size(269, 22);
+            this.tbDBanRo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbDBanRo.Size = new System.Drawing.Size(369, 162);
             this.tbDBanRo.TabIndex = 25;
             // 
             // tbDBanMa
             // 
-            this.tbDBanMa.Location = new System.Drawing.Point(590, 184);
+            this.tbDBanMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbDBanMa.Location = new System.Drawing.Point(590, 163);
+            this.tbDBanMa.Multiline = true;
             this.tbDBanMa.Name = "tbDBanMa";
-            this.tbDBanMa.Size = new System.Drawing.Size(269, 22);
+            this.tbDBanMa.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbDBanMa.Size = new System.Drawing.Size(369, 150);
             this.tbDBanMa.TabIndex = 24;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(513, 344);
+            this.label7.Location = new System.Drawing.Point(494, 526);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 16);
             this.label7.TabIndex = 23;
@@ -123,7 +131,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(513, 234);
+            this.label6.Location = new System.Drawing.Point(494, 337);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(38, 16);
             this.label6.TabIndex = 22;
@@ -132,7 +140,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(513, 187);
+            this.label5.Location = new System.Drawing.Point(494, 166);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 16);
             this.label5.TabIndex = 21;
@@ -141,7 +149,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(60, 344);
+            this.label4.Location = new System.Drawing.Point(12, 526);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 16);
             this.label4.TabIndex = 20;
@@ -149,17 +157,20 @@
             // 
             // tbBanMa
             // 
-            this.tbBanMa.Location = new System.Drawing.Point(128, 341);
+            this.tbBanMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbBanMa.Location = new System.Drawing.Point(104, 523);
+            this.tbBanMa.Multiline = true;
             this.tbBanMa.Name = "tbBanMa";
             this.tbBanMa.ReadOnly = true;
-            this.tbBanMa.Size = new System.Drawing.Size(257, 22);
+            this.tbBanMa.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbBanMa.Size = new System.Drawing.Size(369, 162);
             this.tbBanMa.TabIndex = 19;
             // 
             // btMaHoa
             // 
-            this.btMaHoa.Location = new System.Drawing.Point(128, 284);
+            this.btMaHoa.Location = new System.Drawing.Point(104, 397);
             this.btMaHoa.Name = "btMaHoa";
-            this.btMaHoa.Size = new System.Drawing.Size(75, 23);
+            this.btMaHoa.Size = new System.Drawing.Size(113, 37);
             this.btMaHoa.TabIndex = 18;
             this.btMaHoa.Text = "Mã Hoá";
             this.btMaHoa.UseVisualStyleBackColor = true;
@@ -167,15 +178,17 @@
             // 
             // tbKhoa
             // 
-            this.tbKhoa.Location = new System.Drawing.Point(128, 231);
+            this.tbKhoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbKhoa.Location = new System.Drawing.Point(104, 337);
+            this.tbKhoa.Multiline = true;
             this.tbKhoa.Name = "tbKhoa";
-            this.tbKhoa.Size = new System.Drawing.Size(257, 22);
+            this.tbKhoa.Size = new System.Drawing.Size(369, 37);
             this.tbKhoa.TabIndex = 17;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(60, 234);
+            this.label3.Location = new System.Drawing.Point(12, 337);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 16);
             this.label3.TabIndex = 16;
@@ -184,7 +197,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(60, 187);
+            this.label2.Location = new System.Drawing.Point(12, 166);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 16);
             this.label2.TabIndex = 15;
@@ -192,9 +205,12 @@
             // 
             // tbBanRo
             // 
-            this.tbBanRo.Location = new System.Drawing.Point(128, 184);
+            this.tbBanRo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbBanRo.Location = new System.Drawing.Point(104, 163);
+            this.tbBanRo.Multiline = true;
             this.tbBanRo.Name = "tbBanRo";
-            this.tbBanRo.Size = new System.Drawing.Size(257, 22);
+            this.tbBanRo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbBanRo.Size = new System.Drawing.Size(369, 150);
             this.tbBanRo.TabIndex = 14;
             // 
             // panel1
@@ -202,7 +218,7 @@
             this.panel1.Controls.Add(this.rd256);
             this.panel1.Controls.Add(this.rd192);
             this.panel1.Controls.Add(this.rd128);
-            this.panel1.Location = new System.Drawing.Point(100, 84);
+            this.panel1.Location = new System.Drawing.Point(89, 80);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(427, 65);
             this.panel1.TabIndex = 28;
@@ -239,49 +255,49 @@
             this.rd128.Text = "Khoá 128 bit";
             this.rd128.UseVisualStyleBackColor = true;
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(60, 399);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(63, 16);
-            this.label8.TabIndex = 29;
-            this.label8.Text = "Thời gian";
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(513, 399);
+            this.label9.Location = new System.Drawing.Point(494, 472);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(63, 16);
             this.label9.TabIndex = 30;
             this.label9.Text = "Thời gian";
             // 
-            // ETime
-            // 
-            this.ETime.AutoSize = true;
-            this.ETime.Location = new System.Drawing.Point(152, 399);
-            this.ETime.Name = "ETime";
-            this.ETime.Size = new System.Drawing.Size(0, 16);
-            this.ETime.TabIndex = 31;
-            // 
             // DTime
             // 
             this.DTime.AutoSize = true;
-            this.DTime.Location = new System.Drawing.Point(617, 399);
+            this.DTime.Location = new System.Drawing.Point(587, 472);
             this.DTime.Name = "DTime";
             this.DTime.Size = new System.Drawing.Size(0, 16);
             this.DTime.TabIndex = 32;
+            // 
+            // ETime
+            // 
+            this.ETime.AutoSize = true;
+            this.ETime.Location = new System.Drawing.Point(101, 472);
+            this.ETime.Name = "ETime";
+            this.ETime.Size = new System.Drawing.Size(0, 16);
+            this.ETime.TabIndex = 34;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(12, 472);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(63, 16);
+            this.label8.TabIndex = 33;
+            this.label8.Text = "Thời gian";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(921, 452);
-            this.Controls.Add(this.DTime);
+            this.ClientSize = new System.Drawing.Size(1026, 720);
             this.Controls.Add(this.ETime);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
+            this.Controls.Add(this.DTime);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btGiaiMa);
             this.Controls.Add(this.tbDKhoa);
@@ -331,10 +347,10 @@
         private System.Windows.Forms.RadioButton rd256;
         private System.Windows.Forms.RadioButton rd192;
         private System.Windows.Forms.RadioButton rd128;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label ETime;
         private System.Windows.Forms.Label DTime;
+        private System.Windows.Forms.Label ETime;
+        private System.Windows.Forms.Label label8;
     }
 }
 
