@@ -84,44 +84,49 @@ namespace AES_encrypt
             }
             else
             {
+                DateTime time1 = DateTime.Now;
                 KeyExpantion(4, 10);
-                AddRoundKey(0);
-                for(int i = 1; i <= 9; i++)
+                int index = 0;
+                tbBanMa.Text = "";
+                while (index < tbBanRo.Text.Length)
                 {
-                    Console.WriteLine($"vong thu i : {i}");
-                    Console.WriteLine($"subbytes");
+                    for(int m = 0; m < 4; m++)
+                    {
+                        for(int n = 0; n < 4; n++)
+                        {
+                            if(index < tbBanRo.Text.Length)
+                            {
+                                state[m,n] = (byte)tbBanRo.Text[index];
+                                index++;
+                            }
+                            else
+                            {
+                                state[m, n] = 0x00;
+                            }
+                        }
+                    }
+                    AddRoundKey(0);
+                    for (int i = 1; i <= 9; i++)
+                    {
+                        SubBytes();
+                        ShiftRows();
+                        MixColumns();
+                        AddRoundKey(i * 4);
+                    }
                     SubBytes();
-                    StateLog();
-
-                    Console.WriteLine($"shift row");
                     ShiftRows();
-                    StateLog();
-
-                    Console.WriteLine($"mixcolumn");
-                    MixColumns();
-                    StateLog();
-
-                    Console.WriteLine($"addroundkey");
-                    AddRoundKey(i * 4);
-                    StateLog();
+                    AddRoundKey(40);
+                    for (int i = 1; i < 4; i++)
+                    {
+                        for (int j = 1; j < 4; j++)
+                        {
+                            tbBanMa.Text += Convert.ToChar(state[i, j]);
+                        }
+                    }
                 }
-                SubBytes();
-                StateLog();
-                Console.ReadLine();
-
-                ShiftRows();
-                StateLog();
-                Console.ReadLine();
-
-                AddRoundKey(40);
-                StateLog();
-                //for(int i = 1; i < 4; i++)
-                //{
-                //    for(int j = 1; j < 4; j++)
-                //    {
-                //        tbBanMa.Text += Convert.ToChar(state[i, j]);
-                //    }
-                //}
+                DateTime time2 = DateTime.Now;
+                TimeSpan span = time2.Subtract(time1);
+                ETime.Text = ""+span.TotalSeconds+" Giây";
             }
         }
 
@@ -135,7 +140,49 @@ namespace AES_encrypt
             }
             else
             {
+                DateTime time1 = DateTime.Now;
                 KeyExpantion(6, 12);
+                int index = 0;
+                tbBanMa.Text = "";
+                while (index < tbBanRo.Text.Length)
+                {
+                    for (int m = 0; m < 4; m++)
+                    {
+                        for (int n = 0; n < 4; n++)
+                        {
+                            if (index < tbBanRo.Text.Length)
+                            {
+                                state[m, n] = (byte)tbBanRo.Text[index];
+                                index++;
+                            }
+                            else
+                            {
+                                state[m, n] = 0x00;
+                            }
+                        }
+                    }
+                    AddRoundKey(0);
+                    for (int i = 1; i <= 11; i++)
+                    {
+                        SubBytes();
+                        ShiftRows();
+                        MixColumns();
+                        AddRoundKey(i * 4);
+                    }
+                    SubBytes();
+                    ShiftRows();
+                    AddRoundKey(48);
+                    for (int i = 1; i < 4; i++)
+                    {
+                        for (int j = 1; j < 4; j++)
+                        {
+                            tbBanMa.Text += Convert.ToChar(state[i, j]);
+                        }
+                    }
+                }
+                DateTime time2 = DateTime.Now;
+                TimeSpan span = time2.Subtract(time1);
+                ETime.Text = "" + span.TotalSeconds + " Giây";
             }
         }
 
@@ -149,7 +196,49 @@ namespace AES_encrypt
             }
             else
             {
+                DateTime time1 = DateTime.Now;
                 KeyExpantion(8, 14);
+                int index = 0;
+                tbBanMa.Text = "";
+                while (index < tbBanRo.Text.Length)
+                {
+                    for (int m = 0; m < 4; m++)
+                    {
+                        for (int n = 0; n < 4; n++)
+                        {
+                            if (index < tbBanRo.Text.Length)
+                            {
+                                state[m, n] = (byte)tbBanRo.Text[index];
+                                index++;
+                            }
+                            else
+                            {
+                                state[m, n] = 0x00;
+                            }
+                        }
+                    }
+                    AddRoundKey(0);
+                    for (int i = 1; i <= 13; i++)
+                    {
+                        SubBytes();
+                        ShiftRows();
+                        MixColumns();
+                        AddRoundKey(i * 4);
+                    }
+                    SubBytes();
+                    ShiftRows();
+                    AddRoundKey(56);
+                    for (int i = 1; i < 4; i++)
+                    {
+                        for (int j = 1; j < 4; j++)
+                        {
+                            tbBanMa.Text += Convert.ToChar(state[i, j]);
+                        }
+                    }
+                }
+                DateTime time2 = DateTime.Now;
+                TimeSpan span = time2.Subtract(time1);
+                ETime.Text = "" + span.TotalSeconds + " Giây";
             }
         }
 
@@ -270,7 +359,7 @@ namespace AES_encrypt
                 expanKey[3, i] = (byte)(expanKey[3, i - Nk] ^ temp[3]);
                 i++;
             }
-            ExpanLog(Nr);
+            //ExpanLog(Nr);
         }
 
         private byte[] RotWords(byte[] array)

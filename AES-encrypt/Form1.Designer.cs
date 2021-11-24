@@ -63,7 +63,7 @@
             this.panelTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitle.Location = new System.Drawing.Point(0, 0);
             this.panelTitle.Name = "panelTitle";
-            this.panelTitle.Size = new System.Drawing.Size(976, 75);
+            this.panelTitle.Size = new System.Drawing.Size(1026, 75);
             this.panelTitle.TabIndex = 1;
             // 
             // label1
@@ -72,7 +72,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(308, 22);
+            this.label1.Location = new System.Drawing.Point(333, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(388, 31);
             this.label1.TabIndex = 0;
@@ -81,7 +81,7 @@
             // 
             // btGiaiMa
             // 
-            this.btGiaiMa.Location = new System.Drawing.Point(571, 397);
+            this.btGiaiMa.Location = new System.Drawing.Point(590, 397);
             this.btGiaiMa.Name = "btGiaiMa";
             this.btGiaiMa.Size = new System.Drawing.Size(113, 37);
             this.btGiaiMa.TabIndex = 27;
@@ -92,7 +92,7 @@
             // tbDKhoa
             // 
             this.tbDKhoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDKhoa.Location = new System.Drawing.Point(571, 334);
+            this.tbDKhoa.Location = new System.Drawing.Point(590, 334);
             this.tbDKhoa.Multiline = true;
             this.tbDKhoa.Name = "tbDKhoa";
             this.tbDKhoa.Size = new System.Drawing.Size(369, 40);
@@ -101,19 +101,21 @@
             // tbDBanRo
             // 
             this.tbDBanRo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDBanRo.Location = new System.Drawing.Point(571, 523);
+            this.tbDBanRo.Location = new System.Drawing.Point(590, 523);
             this.tbDBanRo.Multiline = true;
             this.tbDBanRo.Name = "tbDBanRo";
             this.tbDBanRo.ReadOnly = true;
+            this.tbDBanRo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tbDBanRo.Size = new System.Drawing.Size(369, 162);
             this.tbDBanRo.TabIndex = 25;
             // 
             // tbDBanMa
             // 
             this.tbDBanMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDBanMa.Location = new System.Drawing.Point(571, 163);
+            this.tbDBanMa.Location = new System.Drawing.Point(590, 163);
             this.tbDBanMa.Multiline = true;
             this.tbDBanMa.Name = "tbDBanMa";
+            this.tbDBanMa.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tbDBanMa.Size = new System.Drawing.Size(369, 150);
             this.tbDBanMa.TabIndex = 24;
             // 
@@ -147,7 +149,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(36, 526);
+            this.label4.Location = new System.Drawing.Point(12, 526);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 16);
             this.label4.TabIndex = 20;
@@ -160,6 +162,7 @@
             this.tbBanMa.Multiline = true;
             this.tbBanMa.Name = "tbBanMa";
             this.tbBanMa.ReadOnly = true;
+            this.tbBanMa.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tbBanMa.Size = new System.Drawing.Size(369, 162);
             this.tbBanMa.TabIndex = 19;
             // 
@@ -185,7 +188,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(36, 337);
+            this.label3.Location = new System.Drawing.Point(12, 337);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 16);
             this.label3.TabIndex = 16;
@@ -194,7 +197,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(36, 166);
+            this.label2.Location = new System.Drawing.Point(12, 166);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 16);
             this.label2.TabIndex = 15;
@@ -206,6 +209,7 @@
             this.tbBanRo.Location = new System.Drawing.Point(104, 163);
             this.tbBanRo.Multiline = true;
             this.tbBanRo.Name = "tbBanRo";
+            this.tbBanRo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tbBanRo.Size = new System.Drawing.Size(369, 150);
             this.tbBanRo.TabIndex = 14;
             // 
@@ -263,7 +267,7 @@
             // DTime
             // 
             this.DTime.AutoSize = true;
-            this.DTime.Location = new System.Drawing.Point(598, 472);
+            this.DTime.Location = new System.Drawing.Point(587, 472);
             this.DTime.Name = "DTime";
             this.DTime.Size = new System.Drawing.Size(0, 16);
             this.DTime.TabIndex = 32;
@@ -271,7 +275,7 @@
             // ETime
             // 
             this.ETime.AutoSize = true;
-            this.ETime.Location = new System.Drawing.Point(130, 472);
+            this.ETime.Location = new System.Drawing.Point(101, 472);
             this.ETime.Name = "ETime";
             this.ETime.Size = new System.Drawing.Size(0, 16);
             this.ETime.TabIndex = 34;
@@ -279,7 +283,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(36, 472);
+            this.label8.Location = new System.Drawing.Point(12, 472);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(63, 16);
             this.label8.TabIndex = 33;
@@ -289,7 +293,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(976, 720);
+            this.ClientSize = new System.Drawing.Size(1026, 720);
             this.Controls.Add(this.ETime);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.DTime);
