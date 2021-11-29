@@ -81,7 +81,7 @@
             // 
             // btGiaiMa
             // 
-            this.btGiaiMa.Location = new System.Drawing.Point(590, 397);
+            this.btGiaiMa.Location = new System.Drawing.Point(590, 408);
             this.btGiaiMa.Name = "btGiaiMa";
             this.btGiaiMa.Size = new System.Drawing.Size(113, 37);
             this.btGiaiMa.TabIndex = 27;
@@ -92,10 +92,11 @@
             // tbDKhoa
             // 
             this.tbDKhoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDKhoa.Location = new System.Drawing.Point(590, 334);
+            this.tbDKhoa.Location = new System.Drawing.Point(590, 312);
             this.tbDKhoa.Multiline = true;
             this.tbDKhoa.Name = "tbDKhoa";
-            this.tbDKhoa.Size = new System.Drawing.Size(369, 40);
+            this.tbDKhoa.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbDKhoa.Size = new System.Drawing.Size(369, 79);
             this.tbDKhoa.TabIndex = 26;
             // 
             // tbDBanRo
@@ -116,7 +117,7 @@
             this.tbDBanMa.Multiline = true;
             this.tbDBanMa.Name = "tbDBanMa";
             this.tbDBanMa.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbDBanMa.Size = new System.Drawing.Size(369, 150);
+            this.tbDBanMa.Size = new System.Drawing.Size(369, 134);
             this.tbDBanMa.TabIndex = 24;
             // 
             // label7
@@ -131,7 +132,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(494, 337);
+            this.label6.Location = new System.Drawing.Point(494, 318);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(38, 16);
             this.label6.TabIndex = 22;
@@ -168,7 +169,7 @@
             // 
             // btMaHoa
             // 
-            this.btMaHoa.Location = new System.Drawing.Point(104, 397);
+            this.btMaHoa.Location = new System.Drawing.Point(104, 408);
             this.btMaHoa.Name = "btMaHoa";
             this.btMaHoa.Size = new System.Drawing.Size(113, 37);
             this.btMaHoa.TabIndex = 18;
@@ -179,16 +180,17 @@
             // tbKhoa
             // 
             this.tbKhoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbKhoa.Location = new System.Drawing.Point(104, 337);
+            this.tbKhoa.Location = new System.Drawing.Point(104, 312);
             this.tbKhoa.Multiline = true;
             this.tbKhoa.Name = "tbKhoa";
-            this.tbKhoa.Size = new System.Drawing.Size(369, 37);
+            this.tbKhoa.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbKhoa.Size = new System.Drawing.Size(369, 79);
             this.tbKhoa.TabIndex = 17;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 337);
+            this.label3.Location = new System.Drawing.Point(12, 318);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 16);
             this.label3.TabIndex = 16;
@@ -210,7 +212,7 @@
             this.tbBanRo.Multiline = true;
             this.tbBanRo.Name = "tbBanRo";
             this.tbBanRo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbBanRo.Size = new System.Drawing.Size(369, 150);
+            this.tbBanRo.Size = new System.Drawing.Size(369, 134);
             this.tbBanRo.TabIndex = 14;
             // 
             // panel1
