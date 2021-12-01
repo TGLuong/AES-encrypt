@@ -6,6 +6,7 @@
 ## Reference
 - [Giáo trình An toàn và bảo mật thông tin](https://actvneduvn-my.sharepoint.com/:b:/g/personal/ct030433_actvn_edu_vn/EeDoz5wjKZpDjtRVZgIZNxsBz5s_8GviuJQ-rgaNLv_UQA?e=0JJLSM)
 - https://github.com/cloudmadeofcandy/AES_implementation
+- https://nvlpubs.nist.gov/nistpubs/fips/nist.fips.197.pdf
 - https://en.wikipedia.org/wiki/Advanced_Encryption_Standard
 - https://en.wikipedia.org/wiki/Rijndael_S-box
 - https://en.wikipedia.org/wiki/Rijndael_MixColumns
