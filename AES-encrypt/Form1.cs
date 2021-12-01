@@ -13,15 +13,15 @@ namespace AES_encrypt
 
         private void btMaHoa_Click(object sender, EventArgs e)
         {
-            if (rd128.Checked) mode128();
-            else if (rd192.Checked) mode192();
-            else if (rd256.Checked) mode256();
+            if (rd128.Checked) Enmode128();
+            else if (rd192.Checked) Enmode192();
+            else if (rd256.Checked) Enmode256();
         }
 
 
-        private void mode128 ()
+        private void Enmode128 ()
         {
-            tbBanRo.Text = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,17,18";
+            tbBanRo.Text = "48,49,50,51,52,53,54,55,56,57,97,98,99,100,101,102";
             tbKhoa.Text = "48,49,50,51,52,53,54,55,56,57,97,98,99,100,101,102";
             Regex reBanro = new Regex(@"^[0-9]{1,3}(,[0-9]{1,3})*$");
             Regex reKhoa = new Regex(@"^([0-9]{1,3}){1}(,[0-9]{1,3}){15}$");
@@ -57,9 +57,9 @@ namespace AES_encrypt
             ETime.Text = "" + span.TotalSeconds + " Giây";
         }
 
-        private void mode192()
+        private void Enmode192()
         {
-            tbBanRo.Text = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16";
+            tbBanRo.Text = "48,49,50,51,52,53,54,55,56,57,97,98,99,100,101,102";
             tbKhoa.Text = "48,49,50,51,52,53,54,55,56,57,97,98,99,100,101,102,48,49,50,51,52,53,54,55";
             Regex reBanro = new Regex(@"^[0-9]{1,3}(,[0-9]{1,3})*$");
             Regex reKhoa = new Regex(@"^([0-9]{1,3}){1}(,[0-9]{1,3}){23}$");
@@ -95,9 +95,9 @@ namespace AES_encrypt
             ETime.Text = "" + span.TotalSeconds + " Giây";
         }
 
-        private void mode256()
+        private void Enmode256()
         {
-            tbBanRo.Text = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16";
+            tbBanRo.Text = "48,49,50,51,52,53,54,55,56,57,97,98,99,100,101,102";
             tbKhoa.Text = "48,49,50,51,52,53,54,55,56,57,97,98,99,100,101,102,48,49,50,51,52,53,54,55,56,57,97,98,99,100,101,102";
             Regex reBanro = new Regex(@"^[0-9]{1,3}(,[0-9]{1,3})*$");
             Regex reKhoa = new Regex(@"^([0-9]{1,3}){1}(,[0-9]{1,3}){31}$");
@@ -135,10 +135,125 @@ namespace AES_encrypt
 
         private void btGiaiMa_Click(object sender, EventArgs e)
         {
-
+            if (rd128.Checked) Demode128();
+            else if (rd192.Checked) Demode192();
+            else if (rd256.Checked) Demode256();
         }
-        
 
+        private void Demode128()
+        {
+            tbDBanMa.Text = "114,114,126,136,30,220,253,1,0,167,24,104,121,9,181,101";
+            tbDKhoa.Text = "48,49,50,51,52,53,54,55,56,57,97,98,99,100,101,102";
+            Regex reBanma = new Regex(@"^[0-9]{1,3}(,[0-9]{1,3})*$");
+            Regex reKhoa = new Regex(@"^([0-9]{1,3}){1}(,[0-9]{1,3}){15}$");
+            if (!reBanma.IsMatch(tbDBanMa.Text))
+            {
+                MessageBox.Show("Sai định dạng bản mã (vd : 1,2,3,4,...)");
+                return;
+            }
+            if (!reKhoa.IsMatch(tbDKhoa.Text))
+            {
+                MessageBox.Show("Sai định dạng khoá (vd : 1,2,3,4,...), độ dài phải bằng 128bit ~ 16byte");
+                return;
+            }
+            string[] sbanma = tbDBanMa.Text.Split(',');
+            string[] skhoa = tbDKhoa.Text.Split(',');
+            byte[] bbanma = new byte[sbanma.Length];
+            byte[] bkhoa = new byte[skhoa.Length];
+
+            DateTime time1 = DateTime.Now;
+            AESCore core = new AESCore();
+            for (int i = 0; i < sbanma.Length; i++)
+            {
+                bbanma[i] = Byte.Parse(sbanma[i]);
+            }
+            for (int i = 0; i < skhoa.Length; i++)
+            {
+                bkhoa[i] = Byte.Parse(skhoa[i]);
+            }
+            byte[] bbanro = core.Decrypt128bit(bbanma, bkhoa);
+            tbDBanRo.Text = String.Join(",", bbanro);
+            DateTime time2 = DateTime.Now;
+            TimeSpan span = time2.Subtract(time1);
+            DTime.Text = "" + span.TotalSeconds + " Giây";
+        }
+
+        private void Demode192()
+        {
+            tbDBanMa.Text = "218,108,14,41,198,146,114,37,230,31,89,13,180,234,120,247";
+            tbDKhoa.Text = "48,49,50,51,52,53,54,55,56,57,97,98,99,100,101,102,48,49,50,51,52,53,54,55";
+            Regex reBanma = new Regex(@"^[0-9]{1,3}(,[0-9]{1,3})*$");
+            Regex reKhoa = new Regex(@"^([0-9]{1,3}){1}(,[0-9]{1,3}){23}$");
+            if (!reBanma.IsMatch(tbDBanMa.Text))
+            {
+                MessageBox.Show("Sai định dạng bản mã (vd : 1,2,3,4,...)");
+                return;
+            }
+            if (!reKhoa.IsMatch(tbDKhoa.Text))
+            {
+                MessageBox.Show("Sai định dạng khoá (vd : 1,2,3,4,...), độ dài phải bằng 128bit ~ 16byte");
+                return;
+            }
+            string[] sbanma = tbDBanMa.Text.Split(',');
+            string[] skhoa = tbDKhoa.Text.Split(',');
+            byte[] bbanma = new byte[sbanma.Length];
+            byte[] bkhoa = new byte[skhoa.Length];
+
+            DateTime time1 = DateTime.Now;
+            AESCore core = new AESCore();
+            for (int i = 0; i < sbanma.Length; i++)
+            {
+                bbanma[i] = Byte.Parse(sbanma[i]);
+            }
+            for (int i = 0; i < skhoa.Length; i++)
+            {
+                bkhoa[i] = Byte.Parse(skhoa[i]);
+            }
+            byte[] bbanro = core.Decrypt192bit(bbanma, bkhoa);
+            tbDBanRo.Text = String.Join(",", bbanro);
+            DateTime time2 = DateTime.Now;
+            TimeSpan span = time2.Subtract(time1);
+            DTime.Text = "" + span.TotalSeconds + " Giây";
+        }
+
+
+        private void Demode256()
+        {
+            tbDBanMa.Text = "248,60,154,96,220,12,219,152,33,159,121,214,213,219,22,53";
+            tbDKhoa.Text = "48,49,50,51,52,53,54,55,56,57,97,98,99,100,101,102,48,49,50,51,52,53,54,55,56,57,97,98,99,100,101,102";
+            Regex reBanma = new Regex(@"^[0-9]{1,3}(,[0-9]{1,3})*$");
+            Regex reKhoa = new Regex(@"^([0-9]{1,3}){1}(,[0-9]{1,3}){31}$");
+            if (!reBanma.IsMatch(tbDBanMa.Text))
+            {
+                MessageBox.Show("Sai định dạng bản mã (vd : 1,2,3,4,...)");
+                return;
+            }
+            if (!reKhoa.IsMatch(tbDKhoa.Text))
+            {
+                MessageBox.Show("Sai định dạng khoá (vd : 1,2,3,4,...), độ dài phải bằng 128bit ~ 16byte");
+                return;
+            }
+            string[] sbanma = tbDBanMa.Text.Split(',');
+            string[] skhoa = tbDKhoa.Text.Split(',');
+            byte[] bbanma = new byte[sbanma.Length];
+            byte[] bkhoa = new byte[skhoa.Length];
+
+            DateTime time1 = DateTime.Now;
+            AESCore core = new AESCore();
+            for (int i = 0; i < sbanma.Length; i++)
+            {
+                bbanma[i] = Byte.Parse(sbanma[i]);
+            }
+            for (int i = 0; i < skhoa.Length; i++)
+            {
+                bkhoa[i] = Byte.Parse(skhoa[i]);
+            }
+            byte[] bbanro = core.Decrypt256bit(bbanma, bkhoa);
+            tbDBanRo.Text = String.Join(",", bbanro);
+            DateTime time2 = DateTime.Now;
+            TimeSpan span = time2.Subtract(time1);
+            DTime.Text = "" + span.TotalSeconds + " Giây";
+        }
         
     }
 }
