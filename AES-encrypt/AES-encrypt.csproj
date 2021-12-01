@@ -52,6 +52,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Lib\GaloisMul.cs" />
     <Compile Include="Lib\Sbox.cs" />
     <Compile Include="Lib\AESCore.cs" />
     <Compile Include="Program.cs" />

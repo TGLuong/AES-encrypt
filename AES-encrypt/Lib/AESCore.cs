@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace AES_encrypt.Lib
 {
@@ -12,7 +7,9 @@ namespace AES_encrypt.Lib
         private byte[,] state = new byte[4, 4];
         private byte[,] expanKey;
         private byte[] planText;
+        private byte[] CihperText;
         private byte[] key;
+        
 
         public byte[] Encrypt128bit(byte[] planText, byte[] key)
         {
@@ -30,13 +27,13 @@ namespace AES_encrypt.Lib
                 KeyExpantion(4, 10);
                 int index = 0;
                 int resultIndex = 0;
-                while (index < this.planText.Length)
+                while (index < this.planText.Length) 
                 {
                     for (int m = 0; m < 4; m++)
                     {
                         for (int n = 0; n < 4; n++)
                         {
-                            if (index < planText.Length)
+                            if (index < this.planText.Length)
                             {
                                 state[n, m] = this.planText[index];
                                 index++;
@@ -58,7 +55,62 @@ namespace AES_encrypt.Lib
                     SubBytes();
                     ShiftRows();
                     AddRoundKey(40);
-                    StateLog();
+                    for (int i = 0; i < 4; i++)
+                    {
+                        for (int j = 0; j < 4; j++)
+                        {
+                            result[resultIndex++] = state[j, i];
+                        }
+                    }
+                }
+                return result;
+            }
+        }
+
+        public byte[] Decrypt128bit(byte[] CihperText, byte[] key)
+        {
+            this.CihperText = CihperText;
+            this.key = key;
+            if (this.key.Length != 16)
+            {
+                return null;
+            }
+            else
+            {
+                int length = this.CihperText.Length;
+                if (this.CihperText.Length % 16 != 0) length = this.CihperText.Length + (16 - this.CihperText.Length % 16);
+                byte[] result = new byte[length];
+                KeyExpantion(4, 10);
+                int index = 0;
+                int resultIndex = 0;
+                while (index < this.CihperText.Length)
+                {
+                    for (int m = 0; m < 4; m++)
+                    {
+                        for (int n = 0; n < 4; n++)
+                        {
+                            if (index < CihperText.Length)
+                            {
+                                state[n, m] = this.CihperText[index];
+                                index++;
+                            }
+                            else
+                            {
+                                state[n, m] = 0x00;
+                            }
+                        }
+                    }
+                    AddRoundKey(40);
+                    for (int i = 9; i >= 1; i--)
+                    {
+                        InvShiftRows();
+                        InvSubBytes();
+                        AddRoundKey(i * 4);
+                        InvMixColumns();
+                    }
+                    InvShiftRows();
+                    InvSubBytes();
+                    AddRoundKey(0);
                     for (int i = 0; i < 4; i++)
                     {
                         for (int j = 0; j < 4; j++)
@@ -131,6 +183,62 @@ namespace AES_encrypt.Lib
             }
         }
 
+        public byte[] Decrypt192bit(byte[] CihperText, byte[] key)
+        {
+            this.CihperText = CihperText;
+            this.key = key;
+            if (this.key.Length != 24)
+            {
+                return null;
+            }
+            else
+            {
+                int length = this.CihperText.Length;
+                if (this.CihperText.Length % 16 != 0) length = this.CihperText.Length + (16 - this.CihperText.Length % 16);
+                byte[] result = new byte[length];
+                KeyExpantion(6, 12);
+                int index = 0;
+                int resultIndex = 0;
+                while (index < this.CihperText.Length)
+                {
+                    for (int m = 0; m < 4; m++)
+                    {
+                        for (int n = 0; n < 4; n++)
+                        {
+                            if (index < CihperText.Length)
+                            {
+                                state[n, m] = this.CihperText[index];
+                                index++;
+                            }
+                            else
+                            {
+                                state[n, m] = 0x00;
+                            }
+                        }
+                    }
+                    AddRoundKey(48);
+                    for (int i = 11; i >= 1; i--)
+                    {
+                        InvShiftRows();
+                        InvSubBytes();
+                        AddRoundKey(i * 4);
+                        InvMixColumns();
+                    }
+                    InvShiftRows();
+                    InvSubBytes();
+                    AddRoundKey(0);
+                    for (int i = 0; i < 4; i++)
+                    {
+                        for (int j = 0; j < 4; j++)
+                        {
+                            result[resultIndex++] = state[j, i];
+                        }
+                    }
+                }
+                return result;
+            }
+        }
+
         public byte[] Encrypt256bit(byte[] planText, byte[] key)
         {
             this.planText = planText;
@@ -188,6 +296,62 @@ namespace AES_encrypt.Lib
             }
         }
 
+        public byte[] Decrypt256bit(byte[] CihperText, byte[] key)
+        {
+            this.CihperText = CihperText;
+            this.key = key;
+            if (this.key.Length != 32)
+            {
+                return null;
+            }
+            else
+            {
+                int length = this.CihperText.Length;
+                if (this.CihperText.Length % 16 != 0) length = this.CihperText.Length + (16 - this.CihperText.Length % 16);
+                byte[] result = new byte[length];
+                KeyExpantion(8, 14);
+                int index = 0;
+                int resultIndex = 0;
+                while (index < this.CihperText.Length)
+                {
+                    for (int m = 0; m < 4; m++)
+                    {
+                        for (int n = 0; n < 4; n++)
+                        {
+                            if (index < CihperText.Length)
+                            {
+                                state[n, m] = this.CihperText[index];
+                                index++;
+                            }
+                            else
+                            {
+                                state[n, m] = 0x00;
+                            }
+                        }
+                    }
+                    AddRoundKey(56);
+                    for (int i = 13; i >= 1; i--)
+                    {
+                        InvShiftRows();
+                        InvSubBytes();
+                        AddRoundKey(i * 4);
+                        InvMixColumns();
+                    }
+                    InvShiftRows();
+                    InvSubBytes();
+                    AddRoundKey(0);
+                    for (int i = 0; i < 4; i++)
+                    {
+                        for (int j = 0; j < 4; j++)
+                        {
+                            result[resultIndex++] = state[j, i];
+                        }
+                    }
+                }
+                return result;
+            }
+        }
+
         private void SubBytes()
         {
             for (int i = 0; i < 4; i++)
@@ -199,6 +363,17 @@ namespace AES_encrypt.Lib
             }
         }
 
+        private void InvSubBytes()
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    state[i, j] = InvSubByte(state[i, j]);
+                }
+            }
+        }
+
         private byte SubByte(byte alterByte)
         {
             int x = alterByte & 0xf;
@@ -206,14 +381,35 @@ namespace AES_encrypt.Lib
             return Sbox.sbox[y, x];
         }
 
-        private void ShiftRows()
+        private byte InvSubByte(byte alterByte)
         {
-            Shift(1, 1);
-            Shift(2, 2);
-            Shift(3, 3);
+            int x = alterByte & 0xf;
+            int y = (alterByte & 0xf0) >> 4;
+            return Sbox.rsbox[y, x];
         }
 
-        private void Shift(int NRow, int shift)
+        private void ShiftRows()
+        {
+            ShiftRow(1, 1);
+            ShiftRow(2, 2);
+            ShiftRow(3, 3);
+        }
+
+        private void InvShiftRows()
+        {
+            ShiftRow(1, 3);
+            ShiftRow(2, 2);
+            ShiftRow(3, 1);
+        }
+
+        /*
+         * @param[in]
+         *      int Nrow : Index of staterow are shifted
+         *      int shift : number of round are shifted
+         *
+         * return : none
+         */
+        private void ShiftRow(int NRow, int shift)
         {
             for (int i = 1; i <= shift; i++)
             {
@@ -228,29 +424,54 @@ namespace AES_encrypt.Lib
 
         private void MixColumns()
         {
-            for (int i = 0; i < 4; i++)
+            byte[] result = new byte[4];
+            for (int c = 0; c < 4; c++)
             {
-                byte[] a = new byte[4];
-                byte[] b = new byte[4];
-                byte[] result = new byte[4];
-
-                for (int c = 0; c < 4; c++)
-                {
-                    a[c] = state[c, i];
-                    byte h = (byte)((state[c, i] >> 7) & 1);
-                    b[c] = (byte)(state[c, i] << 1);
-                    b[c] = (byte)(b[c] ^ h * 0x1b);
-                }
-
-                result[0] = (byte)((b[0] ^ a[3] ^ a[2] ^ b[1] ^ a[1]) % 256);
-                result[1] = (byte)((b[1] ^ a[0] ^ a[3] ^ b[2] ^ a[2]) % 256);
-                result[2] = (byte)((b[2] ^ a[1] ^ a[0] ^ b[3] ^ a[3]) % 256);
-                result[3] = (byte)((b[3] ^ a[2] ^ a[1] ^ b[0] ^ a[0]) % 256);
-                state[0, i] = result[0];
-                state[1, i] = result[1];
-                state[2, i] = result[2];
-                state[3, i] = result[3];
+                result[0] = (byte)(GaloisMul.Mul2[state[0, c]] ^ GaloisMul.Mul3[state[1, c]] ^ state[2, c] ^ state[3, c]);
+                result[1] = (byte)(state[0, c] ^ GaloisMul.Mul2[state[1, c]] ^ GaloisMul.Mul3[state[2, c]] ^ state[3, c]);
+                result[2] = (byte)(state[0, c] ^ state[1, c] ^ GaloisMul.Mul2[state[2, c]] ^ GaloisMul.Mul3[state[3, c]]);
+                result[3] = (byte)(GaloisMul.Mul3[state[0, c]] ^ state[1, c] ^ state[2, c] ^ GaloisMul.Mul2[state[3, c]]);
+                state[0, c] = result[0];
+                state[1, c] = result[1];
+                state[2, c] = result[2];
+                state[3, c] = result[3];
             }
+        }
+
+        private void InvMixColumns()
+        {
+            byte[] result = new byte[4];
+            for (int c = 0; c < 4; c++)
+            {
+                result[0] = (byte)(GaloisMul.Mul14[state[0, c]] ^ GaloisMul.Mul11[state[1, c]] ^ GaloisMul.Mul13[state[2, c]] ^ GaloisMul.Mul9[state[3, c]]);
+                result[1] = (byte)(GaloisMul.Mul9[state[0, c]] ^ GaloisMul.Mul14[state[1, c]] ^ GaloisMul.Mul11[state[2, c]] ^ GaloisMul.Mul13[state[3, c]]);
+                result[2] = (byte)(GaloisMul.Mul13[state[0, c]] ^ GaloisMul.Mul9[state[1, c]] ^ GaloisMul.Mul14[state[2, c]] ^ GaloisMul.Mul11[state[3, c]]);
+                result[3] = (byte)(GaloisMul.Mul11[state[0, c]] ^ GaloisMul.Mul13[state[1, c]] ^ GaloisMul.Mul9[state[2, c]] ^ GaloisMul.Mul14[state[3, c]]);
+                state[0, c] = result[0];
+                state[1, c] = result[1];
+                state[2, c] = result[2];
+                state[3, c] = result[3];
+            }
+        }
+
+        private byte GMul(byte a, byte b)
+        {
+            byte p = 0;
+            for (int counter = 0; counter < 8; counter++)
+            {
+                if ((b & 1) != 0)
+                {
+                    p ^= a;
+                }
+                bool hi_bit_set = (a & 0x80) != 0;
+                a <<= 1;
+                if (hi_bit_set)
+                {
+                    a ^= 0x1B;
+                }
+                b >>= 1;
+            }
+            return p;
         }
 
         private void AddRoundKey(int index)
@@ -300,7 +521,7 @@ namespace AES_encrypt.Lib
                 expanKey[3, i] = (byte)(expanKey[3, i - Nk] ^ temp[3]);
                 i++;
             }
-            ExpanLog(Nr);
+            //ExpanLog(Nr);
             return;
         }
         private byte[] RotWords(byte[] array)
@@ -316,6 +537,7 @@ namespace AES_encrypt.Lib
             array[3] = temp;
             return array;
         }
+
 
         private void StateLog()
         {
