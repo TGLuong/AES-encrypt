@@ -21,8 +21,6 @@ namespace AES_encrypt
 
         private void Enmode128 ()
         {
-            tbBanRo.Text = "48,49,50,51,52,53,54,55,56,57,97,98,99,100,101,102";
-            tbKhoa.Text = "48,49,50,51,52,53,54,55,56,57,97,98,99,100,101,102";
             Regex reBanro = new Regex(@"^[0-9]{1,3}(,[0-9]{1,3})*$");
             Regex reKhoa = new Regex(@"^([0-9]{1,3}){1}(,[0-9]{1,3}){15}$");
             if (!reBanro.IsMatch(tbBanRo.Text))
@@ -59,8 +57,6 @@ namespace AES_encrypt
 
         private void Enmode192()
         {
-            tbBanRo.Text = "48,49,50,51,52,53,54,55,56,57,97,98,99,100,101,102";
-            tbKhoa.Text = "48,49,50,51,52,53,54,55,56,57,97,98,99,100,101,102,48,49,50,51,52,53,54,55";
             Regex reBanro = new Regex(@"^[0-9]{1,3}(,[0-9]{1,3})*$");
             Regex reKhoa = new Regex(@"^([0-9]{1,3}){1}(,[0-9]{1,3}){23}$");
             if (!reBanro.IsMatch(tbBanRo.Text))
@@ -97,8 +93,6 @@ namespace AES_encrypt
 
         private void Enmode256()
         {
-            tbBanRo.Text = "48,49,50,51,52,53,54,55,56,57,97,98,99,100,101,102";
-            tbKhoa.Text = "48,49,50,51,52,53,54,55,56,57,97,98,99,100,101,102,48,49,50,51,52,53,54,55,56,57,97,98,99,100,101,102";
             Regex reBanro = new Regex(@"^[0-9]{1,3}(,[0-9]{1,3})*$");
             Regex reKhoa = new Regex(@"^([0-9]{1,3}){1}(,[0-9]{1,3}){31}$");
             if (!reBanro.IsMatch(tbBanRo.Text))
@@ -142,8 +136,6 @@ namespace AES_encrypt
 
         private void Demode128()
         {
-            tbDBanMa.Text = "114,114,126,136,30,220,253,1,0,167,24,104,121,9,181,101";
-            tbDKhoa.Text = "48,49,50,51,52,53,54,55,56,57,97,98,99,100,101,102";
             Regex reBanma = new Regex(@"^[0-9]{1,3}(,[0-9]{1,3})*$");
             Regex reKhoa = new Regex(@"^([0-9]{1,3}){1}(,[0-9]{1,3}){15}$");
             if (!reBanma.IsMatch(tbDBanMa.Text))
@@ -180,8 +172,6 @@ namespace AES_encrypt
 
         private void Demode192()
         {
-            tbDBanMa.Text = "218,108,14,41,198,146,114,37,230,31,89,13,180,234,120,247";
-            tbDKhoa.Text = "48,49,50,51,52,53,54,55,56,57,97,98,99,100,101,102,48,49,50,51,52,53,54,55";
             Regex reBanma = new Regex(@"^[0-9]{1,3}(,[0-9]{1,3})*$");
             Regex reKhoa = new Regex(@"^([0-9]{1,3}){1}(,[0-9]{1,3}){23}$");
             if (!reBanma.IsMatch(tbDBanMa.Text))
@@ -219,8 +209,6 @@ namespace AES_encrypt
 
         private void Demode256()
         {
-            tbDBanMa.Text = "248,60,154,96,220,12,219,152,33,159,121,214,213,219,22,53";
-            tbDKhoa.Text = "48,49,50,51,52,53,54,55,56,57,97,98,99,100,101,102,48,49,50,51,52,53,54,55,56,57,97,98,99,100,101,102";
             Regex reBanma = new Regex(@"^[0-9]{1,3}(,[0-9]{1,3})*$");
             Regex reKhoa = new Regex(@"^([0-9]{1,3}){1}(,[0-9]{1,3}){31}$");
             if (!reBanma.IsMatch(tbDBanMa.Text))
