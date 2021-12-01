@@ -1,0 +1,11 @@
+D:\Document\class Material\cơ sở an toàn bảo mật thông tin\pro\AES-encrypt\AES-encrypt\bin\Release\AES-encrypt.exe.config
+D:\Document\class Material\cơ sở an toàn bảo mật thông tin\pro\AES-encrypt\AES-encrypt\bin\Release\AES-encrypt.exe
+D:\Document\class Material\cơ sở an toàn bảo mật thông tin\pro\AES-encrypt\AES-encrypt\bin\Release\AES-encrypt.pdb
+D:\Document\class Material\cơ sở an toàn bảo mật thông tin\pro\AES-encrypt\AES-encrypt\obj\Release\AES-encrypt.csproj.AssemblyReference.cache
+D:\Document\class Material\cơ sở an toàn bảo mật thông tin\pro\AES-encrypt\AES-encrypt\obj\Release\AES-encrypt.csproj.SuggestedBindingRedirects.cache
+D:\Document\class Material\cơ sở an toàn bảo mật thông tin\pro\AES-encrypt\AES-encrypt\obj\Release\AES_encrypt.Form1.resources
+D:\Document\class Material\cơ sở an toàn bảo mật thông tin\pro\AES-encrypt\AES-encrypt\obj\Release\AES_encrypt.Properties.Resources.resources
+D:\Document\class Material\cơ sở an toàn bảo mật thông tin\pro\AES-encrypt\AES-encrypt\obj\Release\AES-encrypt.csproj.GenerateResource.cache
+D:\Document\class Material\cơ sở an toàn bảo mật thông tin\pro\AES-encrypt\AES-encrypt\obj\Release\AES-encrypt.csproj.CoreCompileInputs.cache
+D:\Document\class Material\cơ sở an toàn bảo mật thông tin\pro\AES-encrypt\AES-encrypt\obj\Release\AES-encrypt.exe
+D:\Document\class Material\cơ sở an toàn bảo mật thông tin\pro\AES-encrypt\AES-encrypt\obj\Release\AES-encrypt.pdb
