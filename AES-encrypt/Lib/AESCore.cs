@@ -44,13 +44,23 @@ namespace AES_encrypt.Lib
                             }
                         }
                     }
+                    StateLog();
                     AddRoundKey(0);
+                    StateLog();
                     for (int i = 1; i <= 9; i++)
                     {
+                        Console.WriteLine("round "+i);
                         SubBytes();
+                        StateLog();
+
                         ShiftRows();
+                        StateLog();
+
                         MixColumns();
+                        StateLog();
+
                         AddRoundKey(i * 4);
+                        StateLog();
                     }
                     SubBytes();
                     ShiftRows();
@@ -101,12 +111,23 @@ namespace AES_encrypt.Lib
                         }
                     }
                     AddRoundKey(40);
+                    StateLog();
+
                     for (int i = 9; i >= 1; i--)
                     {
+                        Console.WriteLine("round" + i);
                         InvShiftRows();
+                        StateLog();
+
                         InvSubBytes();
+                        StateLog();
+
                         AddRoundKey(i * 4);
+                        StateLog();
+
                         InvMixColumns();
+                        StateLog();
+
                     }
                     InvShiftRows();
                     InvSubBytes();
@@ -136,7 +157,6 @@ namespace AES_encrypt.Lib
                 int length = this.planText.Length;
                 if (this.planText.Length % 16 != 0) length = this.planText.Length + (16 - this.planText.Length % 16);
                 byte[] result = new byte[length];
-                Console.WriteLine(length);
                 KeyExpantion(6, 12);
                 int index = 0;
                 int resultIndex = 0;
@@ -159,16 +179,37 @@ namespace AES_encrypt.Lib
                         }
                     }
                     AddRoundKey(0);
+                    Console.WriteLine("Add round key \n");
+                    StateLog();
                     for (int i = 1; i <= 11; i++)
                     {
+                        Console.WriteLine("round"+i);
                         SubBytes();
+                        Console.WriteLine("SubByte \n");
+                        StateLog();
+
                         ShiftRows();
+                        Console.WriteLine("shift \n");
+                        StateLog();
+
                         MixColumns();
+                        Console.WriteLine("mix \n");
+                        StateLog();
+
+
                         AddRoundKey(i * 4);
+                        Console.WriteLine("add \n");
+                        StateLog();
                     }
+                    Console.WriteLine("end \n");
                     SubBytes();
+                    StateLog();
+
                     ShiftRows();
+                    StateLog();
+
                     AddRoundKey(48);
+                    StateLog();
                     for (int i = 0; i < 4; i++)
                     {
                         for (int j = 0; j < 4; j++)
@@ -218,11 +259,24 @@ namespace AES_encrypt.Lib
                     AddRoundKey(48);
                     for (int i = 11; i >= 1; i--)
                     {
+                        Console.WriteLine("roud " + i);
                         InvShiftRows();
+                        Console.WriteLine("shif");
+                        StateLog();
+
                         InvSubBytes();
+                        Console.WriteLine("sub");
+                        StateLog();
+
                         AddRoundKey(i * 4);
+                        Console.WriteLine("add");
+                        StateLog();
+
                         InvMixColumns();
+                        Console.WriteLine("mix");
+                        StateLog();
                     }
+                    Console.WriteLine("end");
                     InvShiftRows();
                     InvSubBytes();
                     AddRoundKey(0);
