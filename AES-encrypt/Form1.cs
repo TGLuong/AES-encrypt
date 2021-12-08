@@ -13,9 +13,15 @@ namespace AES_encrypt
 
         private void btMaHoa_Click(object sender, EventArgs e)
         {
-            if (rd128.Checked) Enmode128();
-            else if (rd192.Checked) Enmode192();
-            else if (rd256.Checked) Enmode256();
+            string base64 = "ABff012=";
+            byte[] tobyte = System.Convert.FromBase64String(base64);
+            foreach(byte b in tobyte)
+            {
+                Console.WriteLine($"{b,0:x}");
+            }
+            //if (rd128.Checked) Enmode128();
+            //else if (rd192.Checked) Enmode192();
+            //else if (rd256.Checked) Enmode256();
         }
 
 
