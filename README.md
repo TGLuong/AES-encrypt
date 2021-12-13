@@ -43,6 +43,9 @@ Từ ma trận `key`, ta thực hiện hàm `KeyExpansion` để mở rộng kho
  32 36 61 64 7f 49 28 4c 3e 77 5f 13 2b 5c  3 10 ce 92 91 81 ef 7d ec 6d aa d7 3b 56 4c 9b a0 f6 c6 5d fd  b bc e1 1c 17 ef  e 12  5
  33 37 62 65 c8 ff 9d f8 b5 4a d7 2f 98 d2  5 2a 86 54 51 7b 16 42 13 68 cc 8e 9d f5 29 a7 3a cf ef 48 72 bd d7 9f ed 50 cf 50 bd ed
 ```
+Attempt | #1 | #2 | #3 | #4 | #5 | #6 | #7 | #8 | #9 | #10 | #11
+--- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
+Seconds | 301 | 283 | 290 | 286 | 289 | 285 | 287 | 287 | 272 | 276 | 269
 ### 2.2.1. Thuật Toán Mã Hoá
 Đầu tiên ma trận `state` được cộng với ma trận `key` bằng phép toán `XOR`, sau đó `state` được biến đổi bằng cách thực hiện
 một RoundFunction `Nr` lần, mỗi lần sẽ sử dụng một roundkey ở trong bảng KeyExpansion.</br>
