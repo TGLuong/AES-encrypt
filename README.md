@@ -131,6 +131,9 @@ public void Decrypt()
     AddRoundKey(0);
 }
 ```
+### 2.2.4. Hàm SubBytes và InvSubBytes
+Hàm SubBytes và InvSubBytes thực hiện thay thế các byte của mảng bằng cách sử dụng một bảng thế Sbox và RSbox</br>
+Chúng ta có thể tính ra bảng Sbox bằng cách nhân ngịch đảo trường hữu hạn GF(2<sup>8</sup>)
 
 # Reference
 - [Giáo trình An toàn và bảo mật thông tin](https://actvneduvn-my.sharepoint.com/:b:/g/personal/ct030433_actvn_edu_vn/EeDoz5wjKZpDjtRVZgIZNxsBz5s_8GviuJQ-rgaNLv_UQA?e=0JJLSM)
