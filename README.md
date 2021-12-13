@@ -74,7 +74,23 @@ các hàm `SubBytes` `ShiftRows` `MixColumns` `AddRoundKey`, lần lượt là:
 - `InvMixColumns`
 - Riêng hàm `AddRoundKey` là nghịch đảo của chính nó vì sử dụng phép `XOR`
 
-
+Trình tự thực hiện các hàm là ngược lại so với thuật toán mã hoá:
+```C#
+public void Decrypt()
+    {
+        AddRoundKey(Nr * 4);
+        for (int i = Nr - 1; i >= 1; i--)
+        {
+            InvShiftRows();
+            InvSubBytes();
+            AddRoundKey(i * 4);
+            InvMixColumns();
+        }
+        InvShiftRows();
+        InvSubBytes();
+        AddRoundKey(0);
+    }
+```
 
 # Reference
 - [Giáo trình An toàn và bảo mật thông tin](https://actvneduvn-my.sharepoint.com/:b:/g/personal/ct030433_actvn_edu_vn/EeDoz5wjKZpDjtRVZgIZNxsBz5s_8GviuJQ-rgaNLv_UQA?e=0JJLSM)
