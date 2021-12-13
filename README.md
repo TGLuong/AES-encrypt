@@ -3,7 +3,7 @@
 Thuật toán mã hoá AES là viết tắt của **Advanced Encryption Standard**, đây là thuật toán mã hoá từng khối 128bit 
 dữ liệu cộng với một khoá bí mật có thể thuộc một trong ba dạng : `128bit` `192bit` hoặc `256bit`</br>
 ### Ví dụ:
-Với đầu vào bản rõ có chuỗi bit là:</br>
+Với đầu vào bản rõ có chuỗi bit là:
 ```C#
 [0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38, 0x39, 0x61, 0x62, 0x63, 0x64, 0x65, 0x66]
 ```
