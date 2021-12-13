@@ -1,7 +1,7 @@
 # AES - Encryption, Decryption
 ## 1. Tổng quan về thuật toán mã hoá AES
-<p align="justify">Thuật toán mã hoá AES là viết tắt của **Advanced Encryption Standard**, đây là thuật toán mã hoá từng khối 128bit 
-dữ liệu cộng với một khoá bí mật có thể thuộc một trong ba dạng : `128bit` `192bit` hoặc `256bit`</p>
+Thuật toán mã hoá AES là viết tắt của **Advanced Encryption Standard**, đây là thuật toán mã hoá từng khối 128bit 
+dữ liệu cộng với một khoá bí mật có thể thuộc một trong ba dạng : `128bit` `192bit` hoặc `256bit`</br>
 ### Ví dụ mã hoá với khoá 128bit:
 Với đầu vào bản rõ có chuỗi bit là:
 ```C#
