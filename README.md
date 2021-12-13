@@ -183,12 +183,12 @@ Ta thực hiện thay thế bằng hàm:
 ```C#
 byte SubByte(byte alterByte)
 {
-    return Sbox[alterByte & 0xf, (alterByte & 0xf0) >> 4];
+    return Sbox[(alterByte & 0xf0) >> 4, alterByte & 0xf];
 }
 
 byte InvSubByte(byte alterByte)
 {
-    return RSbox[alterByte & 0xf, (alterByte & 0xf0) >> 4];
+    return RSbox[(alterByte & 0xf0) >> 4, alterByte & 0xf];
 }
 ```
 Ví dụ ta có mảng `state`:
