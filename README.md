@@ -49,7 +49,7 @@ _**Lưu ý: code chỉ mang tính chất minh hoạ.**_
 public void Encrypt()
     {
         AddRoundKey(0);
-        for (int i = 1; i <= Nr; i++)
+        for (int i = 1; i < Nr; i++)
         {
             SubBytes();
             ShiftRows();
@@ -58,7 +58,7 @@ public void Encrypt()
         }
         SubBytes();
         ShiftRows();
-        AddRoundKey((Nr + 1) * 4);
+        AddRoundKey(Nr * 4);
     }
 ```
 
