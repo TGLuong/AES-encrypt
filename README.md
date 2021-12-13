@@ -136,7 +136,7 @@ Hàm SubBytes và InvSubBytes thực hiện thay thế các byte của mảng b�
 Chúng ta có thể tính ra bảng Sbox bằng cách nhân ngịch đảo trường hữu hạn GF(2<sup>8</sup>) và sử dụng phép biến đổi 
 Affine dưới đây :</br>
 <img src="https://latex.codecogs.com/svg.image?b'_i=b_i\oplus&space;b_{(i&plus;4)mod8}\oplus&space;b_{(i&plus;5)mod8}\oplus&space;b_{(i&plus;6)mod8}\oplus&space;b_{(i&plus;7)mod8}" title="b'_i=b_i\oplus b_{(i+4)mod8}\oplus b_{(i+5)mod8}\oplus b_{(i+6)mod8}\oplus b_{(i+7)mod8}" /></br>
-Tuy nhiên, mình chưa đủ khả năng để có thể tự tính ra được một bảng Sbox và RSbox, vì vậy mình sử dụng một bảng Sbox và RSbox đã được public:</br>
+Tuy nhiên, mình sẽ sử dụng một bảng Sbox và RSbox đã được tính sẵn:</br>
 ```C#
 static byte[,] Sbox = {
 /*           0    1    2    3    4    5    6    7    8    9    a    b    c    d    e    f */
