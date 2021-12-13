@@ -51,13 +51,21 @@ Từ ma trận `key`, ta thực hiện hàm `KeyExpansion` để mở rộng kho
   32|  36|  61|  64|  7f|  49|  28|  4c|  3e|  77|  5f|  13|  2b|  5c|   3|  10|  ce|  92|  91|  81|  ef|  7d|  ec|  6d|  aa|  d7|  3b|  56|  4c|  9b|  a0|  f6|  c6|  5d|  fd|   b|  bc|  e1|  1c|  17|  ef|   e|  12|   5
   33|  37|  62|  65|  c8|  ff|  9d|  f8|  b5|  4a|  d7|  2f|  98|  d2|   5|  2a|  86|  54|  51|  7b|  16|  42|  13|  68|  cc|  8e|  9d|  f5|  29|  a7|  3a|  cf|  ef|  48|  72|  bd|  d7|  9f|  ed|  50|  cf|  50|  bd|  ed
 
-Tại `AddRoundKey(0)`, cột 0,1,2,3 sẽ hợp lại thành một roundkey để `XOR` với state.
+Tại hàm `AddRoundKey` lần 1, cột 0,1,2,3 sẽ hợp lại thành một roundkey để `XOR` với `state`.
   0 |  1 |  2 |  3 
 ---:|---:|---:|---:
   30|  34|  38|  63
   31|  35|  39|  65
   32|  36|  61|  64
   33|  37|  62|  65
+
+Lần lượt, tại hàm `AddRoundKey` lần2, cột 4,5,6,7 được hợp lại tạo thành roundkey thứ 2
+  4 |  5 |  6 |  7 
+---:|---:|---:|---:
+  7c|  48|  70|  13
+  72|  47|  7e|  1b
+  7f|  49|  28|  4c
+  c8|  ff|  9d|  f8
 
 ### 2.2.2. Thuật Toán Mã Hoá
 Đầu tiên ma trận `state` được cộng với ma trận `key` bằng phép toán `XOR`, sau đó `state` được biến đổi bằng cách thực hiện
