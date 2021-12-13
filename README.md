@@ -67,7 +67,7 @@ Lần lượt, tại hàm `AddRoundKey` lần 2, cột `4,5,6,7` được hợp 
   7f|  49|  28|  4c
   c8|  ff|  9d|  f8
 
-Đối với khoá `128bit`, Lần thứ `Nr` = 10, roundkey sẽ là:
+Đối với khoá `128bit`, Lần thứ 10, roundkey sẽ là:
   40|  41|  42|  43
 ---:|---:|---:|---:
   72|  81|  c3|  f7
