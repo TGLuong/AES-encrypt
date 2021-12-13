@@ -235,5 +235,5 @@ Hàm này thực hiện chức năng xoay trái các hàng ở trong ma trận s
 - https://en.wikipedia.org/wiki/Rijndael_MixColumns
 ## KeyExpansion
 - https://www.brainkart.com/article/AES-Key-Expansion_8410
-# Round Constance 192bit - 256bit
+## Round Constance 192bit - 256bit
 - https://crypto.stackexchange.com/questions/81712/rcon-for-aes-192-and-256
