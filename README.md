@@ -37,7 +37,7 @@ byte[,] key = {{0x30, 0x34, 0x38, 0x63}
 ### 2.2. Mô Tả Thuật Toán
 ### 2.2.1. Thuật Toán Mã Hoá
 Đầu tiên ma trận `state` được cộng với ma trận `key` bằng phép toán `XOR`, sau đó `state` được biến đổi bằng cách thực hiện
-một `RoudFunction` `Nr` lần.</br>
+một `RoundFunction` `Nr` lần.</br>
 `Nr` phụ thuộc vào độ dài khoá là `128bit` `192bit` hoặc `256bit`:
 - 128bit => `Nr` = 10
 - 192bit => `Nr` = 12
