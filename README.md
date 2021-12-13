@@ -179,6 +179,18 @@ static byte[,] rsbox = {
 /* f */     {0x17,0x2b,0x04,0x7e,0xba,0x77,0xd6,0x26,0xe1,0x69,0x14,0x63,0x55,0x21,0x0c,0x7d},
         };
 ```
+Ta thực hiện thay thế bằng hàm:
+```C#
+byte SubByte(byte alterByte)
+{
+    return Sbox[alterByte & 0xf, (alterByte & 0xf0) >> 4];
+}
+
+byte InvSubByte(byte alterByte)
+{
+    return RSbox[alterByte & 0xf, (alterByte & 0xf0) >> 4];
+}
+```
 
 # Reference
 - [Giáo trình An toàn và bảo mật thông tin](https://actvneduvn-my.sharepoint.com/:b:/g/personal/ct030433_actvn_edu_vn/EeDoz5wjKZpDjtRVZgIZNxsBz5s_8GviuJQ-rgaNLv_UQA?e=0JJLSM)
