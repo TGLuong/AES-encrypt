@@ -225,13 +225,15 @@ Hàm này thực hiện chức năng xoay trái các hàng ở trong ma trận s
 
 # 3. Ví Dụ Chi Tiết Các Bước Mã Hoá
 
-# Reference
+# 4. Reference
+- https://nvlpubs.nist.gov/nistpubs/fips/nist.fips.197.pdf
 - [Giáo trình An toàn và bảo mật thông tin](https://actvneduvn-my.sharepoint.com/:b:/g/personal/ct030433_actvn_edu_vn/EeDoz5wjKZpDjtRVZgIZNxsBz5s_8GviuJQ-rgaNLv_UQA?e=0JJLSM)
 - https://github.com/cloudmadeofcandy/AES_implementation
-- https://nvlpubs.nist.gov/nistpubs/fips/nist.fips.197.pdf
+## Wiki
 - https://en.wikipedia.org/wiki/Advanced_Encryption_Standard
 - https://en.wikipedia.org/wiki/Rijndael_S-box
 - https://en.wikipedia.org/wiki/Rijndael_MixColumns
+## KeyExpansion
 - https://www.brainkart.com/article/AES-Key-Expansion_8410
-### Round Constance 192bit - 256bit
+# Round Constance 192bit - 256bit
 - https://crypto.stackexchange.com/questions/81712/rcon-for-aes-192-and-256
