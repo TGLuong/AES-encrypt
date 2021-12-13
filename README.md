@@ -203,13 +203,21 @@ Ta có `state[0,0] = 0x53` được thay bởi phần tử hàng 5, cột 3 tạ
 Tương tự `state[1,0] = 0xc7` thay bởi phần tử hàng c, cột 7 được `state[1,0] = 0xc6`</br>
 ### 2.2.5. Hàm ShiftRows và InvShiftRows
 Hàm này thực hiện chức năng xoay trái các hàng ở trong ma trận state.
+Đối với hàm `ShiftRows`:
 - Hàng 1 giữ im
 - Hàng 2 xoay 1 vị trí
 - Hàng 3 xoay 2 vị trí
 - Hàng 4 xoay 3 vị trí
 
 ![ShiftRow](./AES-encrypt/Resources/ShiftRow.PNG)
+Đối với hàm `InvShiftRows`:
+- Hàng 1 giữ im
+- Hàng 2 xoay 3 vị trí
+- Hàng 3 xoay 2 vị trí
+- Hàng 4 xoay 1 vị trí
 
+![ShiftRow](./AES-encrypt/Resources/InvShiftRow.PNG)
+### 2.2.6 Hàm MixC
 
 # Reference
 - [Giáo trình An toàn và bảo mật thông tin](https://actvneduvn-my.sharepoint.com/:b:/g/personal/ct030433_actvn_edu_vn/EeDoz5wjKZpDjtRVZgIZNxsBz5s_8GviuJQ-rgaNLv_UQA?e=0JJLSM)
