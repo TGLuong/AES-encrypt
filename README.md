@@ -36,8 +36,8 @@ byte[,] key = {{0x30, 0x34, 0x38, 0x63}
 ```
 ### 2.2. Mô Tả Thuật Toán
 Từ ma trận `key`, ta thực hiện hàm `KeyExpansion` để mở rộng khoá, các khoá(_roundkey_) sẽ được sử hàm `AddRoundKey` dụng tại từng vòng mã hoá.</br>
-**KeyExpansion**
-```C#
+**KeyExpansion:**
+```
  30 34 38 63 7c 48 70 13 d1 99 e9 fa 63 fa 13 e9 96 6c 7f 96 ff 93 ec 7a 2f bc 50 2a  1 bd ed c7 e1 5c b1 76 af f3 42 34 72 81 c3 f7
  31 35 39 65 72 47 7e 1b 5b 1c 62 79 26 3a 58 21 ec d6 8e af e0 36 b8 17 dc ea 52 45 6d 87 d5 90 2f a8 7d ed  4 ac d1 3c f4 58 89 b5
  32 36 61 64 7f 49 28 4c 3e 77 5f 13 2b 5c  3 10 ce 92 91 81 ef 7d ec 6d aa d7 3b 56 4c 9b a0 f6 c6 5d fd  b bc e1 1c 17 ef  e 12  5
