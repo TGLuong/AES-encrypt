@@ -16,7 +16,7 @@ Bản rõ được mã khoá theo khoá, kết quả thu được bản mã đ�
 {0x20, 0x5d, 0x1f, 0xc2, 0x71, 0xad, 0xbd, 0xaa, 0x0d, 0xf0, 0x13, 0x4a, 0xaf, 0xce, 0x60, 0xf5}
 ```
 ## 2. Chi tiết thuật toán mã hoá AES
-### 2.1. Đầu vào
+### 2.1. Dữ liệu đầu vào
 Đầu vào của thuật toán được chia thành từng khối dữ liệu `128bit`, và do đặc điểm này, người ta còn gọi AES 
 là thuật toán mã hoá khối.</br>
 Chuỗi đầu vào được đưa vào ma trận `state [4x4]` theo **qui tắc dọc** với mỗi phần tử của ma trận là 1 byte:</br>
@@ -26,7 +26,13 @@ byte[,] state = {{0x30, 0x34, 0x38, 0x63}
                  {0x32, 0x36, 0x61, 0x65}
                  {0x33, 0x37, 0x62, 0x66}}
 ```
-
+Tương tự như vậy, khoá của thuật toán cũng được lưu vào ma trận `key [4x4]`:
+```C#
+byte[,] key = {{0x30, 0x34, 0x38, 0x63}
+               {0x31, 0x35, 0x39, 0x64}
+               {0x32, 0x36, 0x61, 0x65}
+               {0x33, 0x37, 0x62, 0x66}}
+```
 
 # Reference
 - [Giáo trình An toàn và bảo mật thông tin](https://actvneduvn-my.sharepoint.com/:b:/g/personal/ct030433_actvn_edu_vn/EeDoz5wjKZpDjtRVZgIZNxsBz5s_8GviuJQ-rgaNLv_UQA?e=0JJLSM)
