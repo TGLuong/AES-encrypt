@@ -67,6 +67,14 @@ Lần lượt, tại hàm `AddRoundKey` lần 2, cột `4,5,6,7` được hợp 
   7f|  49|  28|  4c
   c8|  ff|  9d|  f8
 
+Đối với khoá `128bit`, Lần thứ `Nr` = 10 roundkey sẽ là:
+  40|  41|  42|  43
+---:|---:|---:|---:
+  72|  81|  c3|  f7
+  f4|  58|  89|  b5
+  ef|   e|  12|   5
+  cf|  50|  bd|  ed
+
 ### 2.2.2. Thuật Toán Mã Hoá
 Đầu tiên ma trận `state` được cộng với ma trận `key` bằng phép toán `XOR`, sau đó `state` được biến đổi bằng cách thực hiện
 một RoundFunction `Nr` lần, mỗi lần sẽ sử dụng một roundkey ở trong bảng KeyExpansion.</br>
