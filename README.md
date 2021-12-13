@@ -43,8 +43,55 @@ một `RoundFunction` `Nr` lần.</br>
 - `192bit` => `Nr` = 12
 - `256bit` => `Nr` = 14
 
-Riêng vòng cuối cùng thực hiện khác các lần trước đó. Trạng thái cuối cùng sẽ được chuyển thành đầu ra mã hoá của thuật toán</br>
-
+Riêng vòng cuối cùng thực hiện khác các lần trước đó. Trạng thái cuối cùng sẽ được chuyển thành đầu ra mã hoá của thuật toán.</br>
+```C#
+public byte[] Encrypt128bit(byte[] planText, byte[] key)
+    {
+        int length = this.key.Length;
+        if (this.planText.Length % 16 != 0) length = this.planText.Length + (16 - this.planText.Length % 16);
+        byte[] result = new byte[length];
+        KeyExpantion(4, 10);
+        int index = 0;
+        int resultIndex = 0;
+        while (index < this.planText.Length) 
+        {
+            for (int m = 0; m < 4; m++)
+            {
+                for (int n = 0; n < 4; n++)
+                {
+                    if (index < this.planText.Length)
+                    {
+                        state[n, m] = this.planText[index];
+                        index++;
+                    }
+                    else
+                    {
+                        state[n, m] = 0x00;
+                    }
+                }
+            }
+            AddRoundKey(0);
+            for (int i = 1; i <= 9; i++)
+            {
+                SubBytes();
+                ShiftRows();
+                MixColumns();
+                AddRoundKey(i * 4);
+            }
+            SubBytes();
+            ShiftRows();
+            AddRoundKey(40);
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    result[resultIndex++] = state[j, i];
+                }
+            }
+        }
+        return result;
+    }
+```
 
 # Reference
 - [Giáo trình An toàn và bảo mật thông tin](https://actvneduvn-my.sharepoint.com/:b:/g/personal/ct030433_actvn_edu_vn/EeDoz5wjKZpDjtRVZgIZNxsBz5s_8GviuJQ-rgaNLv_UQA?e=0JJLSM)
