@@ -44,7 +44,8 @@ một RoundFunction `Nr` lần, mỗi lần sẽ sử dụng một roundkey ở 
 - `256bit` => `Nr` = 14
 
 RoundFunction làm một hàm đi thực hiện lần lượt bốn hàm: `SubBytes` `ShiftRows` `MixColumns` `AddRoundKey`</br>
-Riêng vòng cuối cùng thực hiện khác các lần trước đó. Trạng thái cuối cùng sẽ được chuyển thành đầu ra mã hoá của thuật toán.</br>
+Riêng vòng cuối cùng thực hiện các hàm `SubBytes` `ShiftRows` `AddRoundKey`. Trạng thái cuối cùng sẽ được chuyển 
+thành đầu ra mã hoá của thuật toán.</br>
 _**Lưu ý: code chỉ mang tính chất minh hoạ.**_
 ```C#
 public void Encrypt()
