@@ -574,7 +574,7 @@ namespace AES_encrypt.Lib
                 expanKey[3, i] = (byte)(expanKey[3, i - Nk] ^ temp[3]);
                 i++;
             }
-            //ExpanLog(Nr);
+            ExpanLog(Nr);
             return;
         }
         private byte[] RotWords(byte[] array)
