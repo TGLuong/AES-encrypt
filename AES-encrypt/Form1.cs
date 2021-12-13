@@ -13,32 +13,32 @@ namespace AES_encrypt
 
         private void btMaHoa_Click(object sender, EventArgs e)
         {
-            string base64 = "ABff012=";
-            byte[] tobyte = System.Convert.FromBase64String(base64);
-            foreach(byte b in tobyte)
-            {
-                Console.WriteLine($"{b,0:x}");
-            }
-            //if (rd128.Checked) Enmode128();
-            //else if (rd192.Checked) Enmode192();
-            //else if (rd256.Checked) Enmode256();
+            Enmode128();
+            //if (rd128.checked) Enmode128();
+            //else if (rd192.checked) Enmode192();
+            //else if (rd256.checked) Enmode256();
         }
 
 
         private void Enmode128 ()
         {
-            tbBanRo.Text = "49,50,49,50,49,50,49,50,49,50,49,50,49,50,49,50";
-            tbKhoa.Text = "51,51,51,51,51,51,51,51,51,51,51,32,32,51,51,51";
-            Regex reBanro = new Regex(@"^[0-9]{1,3}(,[0-9]{1,3})*$");
-            Regex reKhoa = new Regex(@"^([0-9]{1,3}){1}(,[0-9]{1,3}){15}$");
+            tbBanRo.Text = "MDEyMzQ1Njc4OWFiY2RlZg==";
+            tbKhoa.Text = "MDEyMzQ1Njc4OWFiY2RlZg==";
+            foreach(byte b in System.Convert.FromBase64String(tbKhoa.Text))
+            {
+                Console.Write($"{b,0:x}");
+            }
+            return;
+            Regex reBanro = new Regex(@"^([A-za-z0-9+/=])*$");
+            Regex reKhoa = new Regex(@"^([A-za-z0-9+/=]){24}$");
             if (!reBanro.IsMatch(tbBanRo.Text))
             {
-                MessageBox.Show("Sai định dạng bản rõ (vd : 1,2,3,4,...)");
+                MessageBox.Show("Sai định dạng bản rõ, bản rõ cần ở ở định dạng base64");
                 return;
             }
             if (!reKhoa.IsMatch(tbKhoa.Text))
             {
-                MessageBox.Show("Sai định dạng khoá (vd : 1,2,3,4,...), độ dài phải bằng 128bit ~ 16byte");
+                MessageBox.Show("Sai định dạng khoá, khoá cần ở định dạng base 64, độ dài 24 ký tự");
                 return;
             }
             string[] sbanro = tbBanRo.Text.Split(',');
