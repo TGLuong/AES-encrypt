@@ -37,7 +37,7 @@ byte[,] key = {{0x30, 0x34, 0x38, 0x63}
 ### 2.2. Mô Tả Thuật Toán
 ### 2.2.1. Thuật Toán Mã Hoá
 Đầu tiên ma trận `state` được cộng với ma trận `key` bằng phép toán `XOR`, sau đó `state` được biến đổi bằng cách thực hiện
-một `RoundFunction` `Nr` lần.</br>
+một RoundFunction `Nr` lần, mỗi lần sẽ sử dụng một roundkey ở trong bảng KeyExpansion.</br>
 `Nr` phụ thuộc vào độ dài khoá là `128bit` `192bit` hoặc `256bit`:
 - `128bit` => `Nr` = 10
 - `192bit` => `Nr` = 12
@@ -46,25 +46,19 @@ một `RoundFunction` `Nr` lần.</br>
 Riêng vòng cuối cùng thực hiện khác các lần trước đó. Trạng thái cuối cùng sẽ được chuyển thành đầu ra mã hoá của thuật toán.</br>
 _**Lưu ý: code chỉ mang tính chất minh hoạ.**_
 ```C#
-public byte[] Encrypt128bit(byte[] planText, byte[] key)
+public void Encrypt()
     {
-        while (index < planText.Length) 
+        AddRoundKey(0);
+        for (int i = 1; i <= 9; i++)
         {
-            CopyToState();
-            AddRoundKey(0);
-            for (int i = 1; i <= 9; i++)
-            {
-                SubBytes();
-                ShiftRows();
-                MixColumns();
-                AddRoundKey(i * 4);
-            }
             SubBytes();
             ShiftRows();
-            AddRoundKey(40);
-            
+            MixColumns();
+            AddRoundKey(i * 4);
         }
-        return result;
+        SubBytes();
+        ShiftRows();
+        AddRoundKey(40);
     }
 ```
 
