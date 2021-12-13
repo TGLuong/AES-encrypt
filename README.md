@@ -47,8 +47,8 @@ Riêng vòng cuối cùng thực hiện khác các lần trước đó. Trạng 
 ```C#
 public byte[] Encrypt128bit(byte[] planText, byte[] key)
     {
-        int length = this.key.Length;
-        if (this.planText.Length % 16 != 0) length = this.planText.Length + (16 - this.planText.Length % 16);
+        int length = plantext.Length;
+        if (planText.Length % 16 != 0) length = planText.Length + (16 - planText.Length % 16);
         byte[] result = new byte[length];
         KeyExpantion(4, 10);
         int index = 0;
