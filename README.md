@@ -194,13 +194,14 @@ byte InvSubByte(byte alterByte)
 Ví dụ ta có mảng `state`:
   0 |  1 |  2 |  3 
 ---:|---:|---:|---:
-   0|   4|   8|  12
-   1|   5|   9|  13
-   2|   6|  10|  14
-   3|   7|  11|  15
+  53|  44|  b8|  b2
+  c7|  75|   9|  13
+  34|  a6|  f0|  d4
+  18|  17|  41|  15
 
-Ta có `state[0,0] = 0x00` được thay bởi phần tử cột 0, hàng 0 tại bảng Sbox được `state[0,0] = 0x63`</br>
-`state[1,0] = 0x01` thay bởi phần tử cột 1, hàng 0 được `state[1,0] = 0x7c
+Ta có `state[0,0] = 0x53` được thay bởi phần tử hàng 5, cột 3 tại bảng Sbox được `state[0,0] = 0xed`</br>
+Tương tự `state[1,0] = 0xc7` thay bởi phần tử hàng c, cột 7 được `state[1,0] = 0xc6`</br>
+
 
 # Reference
 - [Giáo trình An toàn và bảo mật thông tin](https://actvneduvn-my.sharepoint.com/:b:/g/personal/ct030433_actvn_edu_vn/EeDoz5wjKZpDjtRVZgIZNxsBz5s_8GviuJQ-rgaNLv_UQA?e=0JJLSM)
