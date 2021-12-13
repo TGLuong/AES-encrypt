@@ -52,7 +52,7 @@ Từ ma trận `key`, ta thực hiện hàm `KeyExpansion` để mở rộng kho
   33|  37|  62|  65|  c8|  ff|  9d|  f8|  b5|  4a|  d7|  2f|  98|  d2|   5|  2a|  86|  54|  51|  7b|  16|  42|  13|  68|  cc|  8e|  9d|  f5|  29|  a7|  3a|  cf|  ef|  48|  72|  bd|  d7|  9f|  ed|  50|  cf|  50|  bd|  ed
 
 Tại `AddRoundKey(0)`, cột 0,1,2,3 sẽ hợp lại thành một roundkey để `XOR` với state.
----:|---:|---:|---:
+
   30|  34|  38|  63
   31|  35|  39|  65
   32|  36|  61|  64
