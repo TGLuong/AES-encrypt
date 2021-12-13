@@ -66,6 +66,15 @@ public void Encrypt()
         AddRoundKey(Nr * 4);
     }
 ```
+### 2.2.2. Thuật Toán Giải Mã
+Đối với thuật toán giải mã chỉ đơn giản là ta làm ngược lại so với thuật toán giải mã, ta sử dụng bốn hàm ngịch đảo của 
+các hàm `SubBytes` `ShiftRows` `MixColumns` `AddRoundKey`, lần lượt là:
+- `InvSubBytes`
+- `InvShiftRows`
+- `InvMixColumns`
+- Riêng hàm `AddRoundKey` là nghịch đảo của chính nó vì sử dụng phép `XOR`
+
+
 
 # Reference
 - [Giáo trình An toàn và bảo mật thông tin](https://actvneduvn-my.sharepoint.com/:b:/g/personal/ct030433_actvn_edu_vn/EeDoz5wjKZpDjtRVZgIZNxsBz5s_8GviuJQ-rgaNLv_UQA?e=0JJLSM)
