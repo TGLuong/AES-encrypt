@@ -44,8 +44,7 @@ một `RoundFunction` `Nr` lần.</br>
 - `256bit` => `Nr` = 14
 
 Riêng vòng cuối cùng thực hiện khác các lần trước đó. Trạng thái cuối cùng sẽ được chuyển thành đầu ra mã hoá của thuật toán.</br>
-Code minh hoạ.</br>
-_Lưu ý: code chỉ mang tính chất minh hoạ, **không thể chạy được**_
+_**Lưu ý: code chỉ mang tính chất minh hoạ.**_
 ```C#
 public byte[] Encrypt128bit(byte[] planText, byte[] key)
     {
