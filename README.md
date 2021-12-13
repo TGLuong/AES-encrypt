@@ -33,8 +33,9 @@ byte[,] key = {{0x30, 0x34, 0x38, 0x63}
                {0x32, 0x36, 0x61, 0x65}
                {0x33, 0x37, 0x62, 0x66}}
 ```
-### 2.2 Mô Tả Thuật Toán
-### 2.2.1 Thuật Toán Mã Hoá
+### 2.2. Mô Tả Thuật Toán
+### 2.2.1. Thuật Toán Mã Hoá
+
 # Reference
 - [Giáo trình An toàn và bảo mật thông tin](https://actvneduvn-my.sharepoint.com/:b:/g/personal/ct030433_actvn_edu_vn/EeDoz5wjKZpDjtRVZgIZNxsBz5s_8GviuJQ-rgaNLv_UQA?e=0JJLSM)
 - https://github.com/cloudmadeofcandy/AES_implementation
