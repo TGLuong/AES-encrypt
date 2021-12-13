@@ -2,7 +2,7 @@
 ## 1. Tổng Quan Về Thuật Toán Mã Hoá AES
 Chuẩn mã hóa dữ liệu cao cấp AES là một hệ mã khóa bí mật có tên là **Rijndael** (Do hai nhà mật mã học người Bỉ 
 là **Joan Daemen** và **Vincent Rijmen** đưa ra và trở thành chuẩn từ năm 2002) cho phép xử lý các khối dữ liệu input
-có kích thước 128 bit, sử dụng các khóa có độ dài `128bit` `192bit` hoặc `256 bit`
+có kích thước `128bit`, sử dụng các khóa có độ dài `128bit` `192bit` hoặc `256 bit`
 ### Ví Dụ Mã Hoá Với Khoá 128bit:
 Với đầu vào bản rõ có chuỗi bit là:
 ```C#
