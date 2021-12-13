@@ -1,7 +1,7 @@
 # AES-encrypt
 ## Tổng quan về thuật toán mã hoá AES
 Thuật toán mã hoá AES là viết tắt của **Advanced Encryption Standard**, đây là thuật toán mã hoá từng khối 128bit 
-dữ liệu cộng với một khoá bí mật có thể thuộc một trong ba dạng : 128bit, 192bit, 256bit.</br>
+dữ liệu cộng với một khoá bí mật có thể thuộc một trong ba dạng : `128bit` `192bit` hoặc `256bit`</br>
 
 ## Reference
 - [Giáo trình An toàn và bảo mật thông tin](https://actvneduvn-my.sharepoint.com/:b:/g/personal/ct030433_actvn_edu_vn/EeDoz5wjKZpDjtRVZgIZNxsBz5s_8GviuJQ-rgaNLv_UQA?e=0JJLSM)
