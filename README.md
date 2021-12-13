@@ -58,7 +58,7 @@ public void Encrypt()
         }
         SubBytes();
         ShiftRows();
-        AddRoundKey(Nr * 4);
+        AddRoundKey((Nr + 1) * 4);
     }
 ```
 
