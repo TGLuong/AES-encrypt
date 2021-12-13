@@ -20,10 +20,10 @@ Bản rõ được mã khoá theo khoá, kết quả thu được bản mã đ�
 Đầu vào của thuật toán được chia thành từng khối dữ liệu `128bit`, và do đặc điểm này, người ta còn gọi AES là thuật toán mã hoá khối </br>
 Chuỗi đầu vào được đưa vào một ma trận `[4x4]` theo qui tắc dọc với mỗi phần tử của ma trận là 1 byte</br>
 ```C#
-[0x30, 0x34, 0x38, 0x63]
-[0x31, 0x35, 0x39, 0x64]
-[0x32, 0x36, 0x61, 0x65]
-[0x33, 0x37, 0x62, 0x66]
+[[0x30, 0x34, 0x38, 0x63]
+ [0x31, 0x35, 0x39, 0x64]
+ [0x32, 0x36, 0x61, 0x65]
+ [0x33, 0x37, 0x62, 0x66]]
 ```
 
 
