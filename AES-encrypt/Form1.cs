@@ -42,6 +42,10 @@ namespace AES_encrypt
                     System.Convert.FromBase64String(tbBanRo.Text),
                     System.Convert.FromBase64String(tbKhoa.Text)
                 );
+            foreach(byte b in bbanma)
+            {
+                Console.WriteLine($"{b,0:x}");
+            }
             tbBanMa.Text = System.Convert.ToBase64String(bbanma);
             DateTime time2 = DateTime.Now;
             TimeSpan span = time2.Subtract(time1);
