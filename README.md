@@ -43,7 +43,7 @@ một `RoundFunction` `Nr` lần.</br>
 - `192bit` => `Nr` = 12
 - `256bit` => `Nr` = 14
 
-</br>Riêng vòng cuối cùng thực hiện khác các lần trước đó. Trạng thái cuối cùng sẽ được chuyển thành đầu ra mã hoá của thuật toán</br>
+Riêng vòng cuối cùng thực hiện khác các lần trước đó. Trạng thái cuối cùng sẽ được chuyển thành đầu ra mã hoá của thuật toán</br>
 
 
 # Reference
