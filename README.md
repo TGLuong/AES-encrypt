@@ -219,7 +219,11 @@ Hàm này thực hiện chức năng xoay trái các hàng ở trong ma trận s
 ![ShiftRow](./AES-encrypt/Resources/InvShiftRow.PNG)
 ### 2.2.6 Hàm MixColumnm Và InvMixColumn
 
+### 2.2.7 Hàm AddRoundKey
 
+### 2.2.8 Hàm KeyExpansion
+
+# 3. Ví Dụ Chi Tiết Các Bước Mã Hoá
 
 # Reference
 - [Giáo trình An toàn và bảo mật thông tin](https://actvneduvn-my.sharepoint.com/:b:/g/personal/ct030433_actvn_edu_vn/EeDoz5wjKZpDjtRVZgIZNxsBz5s_8GviuJQ-rgaNLv_UQA?e=0JJLSM)
