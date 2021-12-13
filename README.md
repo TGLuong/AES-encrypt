@@ -66,22 +66,22 @@ thành đầu ra mã hoá của thuật toán.</br>
 _**Lưu ý: code chỉ mang tính chất minh hoạ.**_
 ```C#
 public void Encrypt()
+{
+    // state xor key
+    AddRoundKey(0);
+    for (int i = 1; i < Nr; i++)
     {
-        // state xor key
-        AddRoundKey(0);
-        for (int i = 1; i < Nr; i++)
-        {
-            // RoundFunction
-            SubBytes();
-            ShiftRows();
-            MixColumns();
-            AddRoundKey(i * 4);
-        }
-        // Vòng cuối
+        // RoundFunction
         SubBytes();
         ShiftRows();
-        AddRoundKey(Nr * 4);
+        MixColumns();
+        AddRoundKey(i * 4);
     }
+    // Vòng cuối
+    SubBytes();
+    ShiftRows();
+    AddRoundKey(Nr * 4);
+}
 ```
 ### 2.2.3. Thuật Toán Giải Mã
 Đối với thuật toán giải mã chỉ đơn giản là ta làm ngược lại so với thuật toán giải mã, ta sử dụng bốn hàm ngịch đảo của 
@@ -94,19 +94,19 @@ các hàm `SubBytes` `ShiftRows` `MixColumns` `AddRoundKey`, lần lượt là:
 Trình tự thực hiện các hàm là ngược lại so với thuật toán mã hoá:
 ```C#
 public void Decrypt()
+{
+    AddRoundKey(Nr * 4);
+    for (int i = Nr - 1; i >= 1; i--)
     {
-        AddRoundKey(Nr * 4);
-        for (int i = Nr - 1; i >= 1; i--)
-        {
-            InvShiftRows();
-            InvSubBytes();
-            AddRoundKey(i * 4);
-            InvMixColumns();
-        }
         InvShiftRows();
         InvSubBytes();
-        AddRoundKey(0);
+        AddRoundKey(i * 4);
+        InvMixColumns();
     }
+    InvShiftRows();
+    InvSubBytes();
+    AddRoundKey(0);
+}
 ```
 
 # Reference
