@@ -1,7 +1,8 @@
 # AES - Encryption, Decryption
 ## 1. Tổng Quan Về Thuật Toán Mã Hoá AES
-Thuật toán mã hoá AES là viết tắt của **Advanced Encryption Standard**, đây là thuật toán mã hoá từng khối 128bit 
-dữ liệu cộng với một khoá bí mật có thể thuộc một trong ba dạng : `128bit` `192bit` hoặc `256bit`</br>
+Chuẩn mã hóa dữ liệu cao cấp AES là một hệ mã khóa bí mật có tên là **Rijndael** (Do hai nhà mật mã học người Bỉ 
+là **Joan Daemen** và **Vincent Rijmen** đưa ra và trở thành chuẩn từ năm 2002) cho phép xử lý các khối dữ liệu input
+có kích thước 128 bit, sử dụng các khóa có độ dài `128bit` `192bit` hoặc `256 bit`
 ### Ví Dụ Mã Hoá Với Khoá 128bit:
 Với đầu vào bản rõ có chuỗi bit là:
 ```C#
@@ -35,6 +36,7 @@ byte[,] key = {{0x30, 0x34, 0x38, 0x63}
 ```
 ### 2.2. Mô Tả Thuật Toán
 ### 2.2.1. Thuật Toán Mã Hoá
+
 
 # Reference
 - [Giáo trình An toàn và bảo mật thông tin](https://actvneduvn-my.sharepoint.com/:b:/g/personal/ct030433_actvn_edu_vn/EeDoz5wjKZpDjtRVZgIZNxsBz5s_8GviuJQ-rgaNLv_UQA?e=0JJLSM)
