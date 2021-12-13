@@ -48,14 +48,17 @@ _**Lưu ý: code chỉ mang tính chất minh hoạ.**_
 ```C#
 public void Encrypt()
     {
+        // state xor key
         AddRoundKey(0);
         for (int i = 1; i < Nr; i++)
         {
+            // RoundFunction
             SubBytes();
             ShiftRows();
             MixColumns();
             AddRoundKey(i * 4);
         }
+        // Vòng cuối
         SubBytes();
         ShiftRows();
         AddRoundKey(Nr * 4);
