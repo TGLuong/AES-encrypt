@@ -18,7 +18,7 @@ Bản rõ được mã khoá theo khoá, kết quả thu được bản mã đ�
 ## 2. Chi tiết thuật toán mã hoá AES
 ### 2.1. Đầu vào
 Đầu vào của thuật toán được chia thành từng khối dữ liệu `128bit`, và do đặc điểm này, người ta còn gọi AES là thuật toán mã hoá khối </br>
-Chuỗi đầu vào được đưa vào một ma trận `[4x4]` theo qui tắc dọc với mỗi phần tử của ma trận là 1 byte</br>
+Chuỗi đầu vào được đưa vào một ma trận `[4x4]` theo **qui tắc dọc** với mỗi phần tử của ma trận là 1 byte</br>
 ```C#
 [[0x30, 0x34, 0x38, 0x63]
  [0x31, 0x35, 0x39, 0x64]
