@@ -39,9 +39,9 @@ byte[,] key = {{0x30, 0x34, 0x38, 0x63}
 Đầu tiên ma trận `state` được cộng với ma trận `key` bằng phép toán `XOR`, sau đó `state` được biến đổi bằng cách thực hiện
 một `RoundFunction` `Nr` lần.</br>
 `Nr` phụ thuộc vào độ dài khoá là `128bit` `192bit` hoặc `256bit`:
-- 128bit => `Nr` = 10
-- 192bit => `Nr` = 12
-- 256bit => `Nr` = 14
+- `128bit` => `Nr` = 10
+- `192bit` => `Nr` = 12
+- `256bit` => `Nr` = 14
 
 # Reference
 - [Giáo trình An toàn và bảo mật thông tin](https://actvneduvn-my.sharepoint.com/:b:/g/personal/ct030433_actvn_edu_vn/EeDoz5wjKZpDjtRVZgIZNxsBz5s_8GviuJQ-rgaNLv_UQA?e=0JJLSM)
