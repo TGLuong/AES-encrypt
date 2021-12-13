@@ -15,9 +15,11 @@ Bản rõ được mã khoá theo khoá, kết quả thu được bản mã đ�
 ```C#
 [0x20, 0x5d, 0x1f, 0xc2, 0x71, 0xad, 0xbd, 0xaa, 0x0d, 0xf0, 0x13, 0x4a, 0xaf, 0xce, 0x60, 0xf5]
 ```
+## 2. Chi tiết thuật toán mã hoá AES
+### 2.1 Đầu vào
 
 
-## Reference
+# Reference
 - [Giáo trình An toàn và bảo mật thông tin](https://actvneduvn-my.sharepoint.com/:b:/g/personal/ct030433_actvn_edu_vn/EeDoz5wjKZpDjtRVZgIZNxsBz5s_8GviuJQ-rgaNLv_UQA?e=0JJLSM)
 - https://github.com/cloudmadeofcandy/AES_implementation
 - https://nvlpubs.nist.gov/nistpubs/fips/nist.fips.197.pdf
