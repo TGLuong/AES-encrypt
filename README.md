@@ -132,7 +132,7 @@ public void Decrypt()
 }
 ```
 ### 2.2.4. Hàm SubBytes và InvSubBytes
-Hàm SubBytes và InvSubBytes thực hiện thay thế các byte của mảng bằng cách sử dụng một bảng thế Sbox và RSbox.</br>
+Hàm SubBytes và InvSubBytes thực hiện thay thế các byte của mảng `state` bằng cách sử dụng một bảng thế Sbox và RSbox.</br>
 Chúng ta có thể tính ra bảng Sbox bằng cách nhân ngịch đảo trường hữu hạn GF(2<sup>8</sup>) và sử dụng phép biến đổi 
 Affine dưới đây :</br>
 <img src="https://latex.codecogs.com/svg.image?b'_i=b_i\oplus&space;b_{(i&plus;4)mod8}\oplus&space;b_{(i&plus;5)mod8}\oplus&space;b_{(i&plus;6)mod8}\oplus&space;b_{(i&plus;7)mod8}" title="b'_i=b_i\oplus b_{(i+4)mod8}\oplus b_{(i+5)mod8}\oplus b_{(i+6)mod8}\oplus b_{(i+7)mod8}" /></br>
@@ -191,6 +191,16 @@ byte InvSubByte(byte alterByte)
     return RSbox[alterByte & 0xf, (alterByte & 0xf0) >> 4];
 }
 ```
+Ví dụ ta có mảng `state`:
+  0 |  1 |  2 |  3 
+---:|---:|---:|---:
+   0|   4|   8|  12
+   1|   5|   9|  13
+   2|   6|  10|  14
+   3|   7|  11|  15
+
+Ta có `state[0,0] = 0x00` được thay bởi phần tử cột 0, hàng 0 tại bảng Sbox được `state[0,0] = 0x63`</br>
+`state[1,0] = 0x01` thay bởi phần tử cột 1, hàng 0 được `state[1,0] = 0x7c
 
 # Reference
 - [Giáo trình An toàn và bảo mật thông tin](https://actvneduvn-my.sharepoint.com/:b:/g/personal/ct030433_actvn_edu_vn/EeDoz5wjKZpDjtRVZgIZNxsBz5s_8GviuJQ-rgaNLv_UQA?e=0JJLSM)
