@@ -21,7 +21,7 @@ namespace AES_encrypt.Lib
             }
             else
             {
-                int length = this.key.Length;
+                int length = this.planText.Length;
                 if (this.planText.Length % 16 != 0) length = this.planText.Length + (16 - this.planText.Length % 16);
                 byte[] result = new byte[length];
                 KeyExpantion(4, 10);
