@@ -217,8 +217,8 @@ Hàm này thực hiện chức năng xoay trái các hàng ở trong ma trận s
 - Hàng 4 xoay 1 vị trí
 
 ![ShiftRow](./AES-encrypt/Resources/InvShiftRow.PNG)
-### 2.2.6 Hàm MixColumnm Và InvMixColumn
-Hàm `MixColumn` này thực hiện tính toán trên các cột của ma trận `state`, phép biến đổi được thực hiện dựa trên phép nhân ma trận (_**thực hiện trên trường GF(2<sup>8</sup>)**_) sau:</br></br>
+### 2.2.6 Hàm MixColumnms Và InvMixColumns
+Hàm `MixColumns` này thực hiện tính toán trên các cột của ma trận `state`, phép biến đổi được thực hiện dựa trên phép nhân ma trận (_**thực hiện trên trường GF(2<sup>8</sup>)**_) sau:</br></br>
 <img src="https://latex.codecogs.com/svg.image?\begin{pmatrix}&space;s^{'}_{0,c}&space;\\s^{'}_{1,c}&space;\\s^{'}_{2,c}&space;\\s^{'}_{3,c}\end{pmatrix}=\begin{pmatrix}&space;02&&space;&space;03&&space;&space;01&&space;&space;01\\&space;01&&space;&space;02&&space;&space;03&&space;&space;01\\&space;01&&space;&space;01&&space;&space;02&&space;&space;03\\&space;03&&space;&space;01&&space;&space;01&&space;&space;02\\\end{pmatrix}\begin{pmatrix}s_{0,c}\\s_{1,c}\\s_{2,c}\\s_{3,c}\end{pmatrix}&space;" title="\begin{pmatrix} s^{'}_{0,c} \\s^{'}_{1,c} \\s^{'}_{2,c} \\s^{'}_{3,c}\end{pmatrix}=\begin{pmatrix} 02& 03& 01& 01\\ 01& 02& 03& 01\\ 01& 01& 02& 03\\ 03& 01& 01& 02\\\end{pmatrix}\begin{pmatrix}s_{0,c}\\s_{1,c}\\s_{2,c}\\s_{3,c}\end{pmatrix} " /></br></br>
 Hay đơn giản hơn là bốn byte trong mỗi cột sẽ được thay thế theo công thức sau (_**thực hiện trên trường GF(2<sup>8</sup>)**_): </br> </br>
 <img src="https://latex.codecogs.com/svg.image?S^{'}_{0,c}=(\{02\}&space;\bullet&space;S_{0,c})\oplus&space;(\{03\}\bullet&space;S_{1,c})\oplus&space;S_{2,c}\oplus&space;S_{3,c}" title="S^{'}_{0,c}=(\{02\} \bullet S_{0,c})\oplus (\{03\}\bullet S_{1,c})\oplus S_{2,c}\oplus S_{3,c}" /></br>
@@ -248,7 +248,7 @@ private byte GMul(byte a, byte b)
 }
 ```
 Hàm trên thực hiện và trả về tích hai số a và b trên trường hữu hạn GF(2<sup>8</sup>).</br>
-Vậy nên hàm `MixColumn` như sau:
+Vậy nên hàm `MixColumns` như sau:
 ```C#
 private void MixColumns()
 {
@@ -266,6 +266,8 @@ private void MixColumns()
     }
 }
 ```
+Ngược lại là hàm `InvMixColumns`, đối với hàm `InvMixColumns` ta thực hiện phép nhân ma trận sau:</br></br>
+<img src="https://latex.codecogs.com/svg.image?\begin{pmatrix}S^{'}_{0,c}&space;\\S^{'}_{1,c}&space;\\S^{'}_{2,c}&space;\\S^{'}_{3,c}\end{pmatrix}=\begin{pmatrix}0e&space;&&space;&space;0b&&space;&space;0d&&space;&space;09\\09&space;&&space;&space;0e&&space;&space;0b&&space;&space;0d\\0d&space;&&space;&space;09&&space;&space;0e&&space;&space;0b\\0b&space;&&space;&space;0d&&space;&space;09&&space;&space;0e\\\end{pmatrix}&space;\begin{pmatrix}S_{0,c}&space;\\S_{1,c}&space;\\S_{2,c}&space;\\S_{3,c}\end{pmatrix}&space;" title="\begin{pmatrix}S^{'}_{0,c} \\S^{'}_{1,c} \\S^{'}_{2,c} \\S^{'}_{3,c}\end{pmatrix}=\begin{pmatrix}0e & 0b& 0d& 09\\09 & 0e& 0b& 0d\\0d & 09& 0e& 0b\\0b & 0d& 09& 0e\\\end{pmatrix} \begin{pmatrix}S_{0,c} \\S_{1,c} \\S_{2,c} \\S_{3,c}\end{pmatrix} " />
 ### 2.2.7 Hàm AddRoundKey
 
 ### 2.2.8 Hàm KeyExpansion
