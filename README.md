@@ -280,10 +280,10 @@ private void InvMixColumns()
     byte[] buffer = new byte[4];
     for (int c = 0; c < 4; c++)
     {
-        buffer[0] = (byte)(GMul(0xe, state[0, c]) ^ GaloisMul.Mul11[state[1, c]] ^ GaloisMul.Mul13[state[2, c]] ^ GaloisMul.Mul9[state[3, c]]);
-        buffer[1] = (byte)(GaloisMul.Mul9[state[0, c]] ^ GaloisMul.Mul14[state[1, c]] ^ GaloisMul.Mul11[state[2, c]] ^ GaloisMul.Mul13[state[3, c]]);
-        buffer[2] = (byte)(GaloisMul.Mul13[state[0, c]] ^ GaloisMul.Mul9[state[1, c]] ^ GaloisMul.Mul14[state[2, c]] ^ GaloisMul.Mul11[state[3, c]]);
-        buffer[3] = (byte)(GaloisMul.Mul11[state[0, c]] ^ GaloisMul.Mul13[state[1, c]] ^ GaloisMul.Mul9[state[2, c]] ^ GaloisMul.Mul14[state[3, c]]);
+        buffer[0] = (byte)(GMul(0xe, state[0, c]) ^ GMul(0xb, state[1, c]) ^ GMul(0xd, state[2, c]) ^ GMul(0x9, state[3, c]));
+        buffer[1] = (byte)(GMul(0x9, state[0, c]) ^ GMul(0xe, state[1, c]) ^ GMul(0xb, state[2, c]) ^ GMul(0xd, state[3, c]));
+        buffer[2] = (byte)(GMul(0xd, state[0, c]) ^ GMul(0x9, state[1, c]) ^ GMul(0xe, state[2, c]) ^ GMul(0xb, state[3, c]));
+        buffer[3] = (byte)(GMul(0xb, state[0, c]) ^ GMul(0xd, state[1, c]) ^ GMul(0x9, state[2, c]) ^ GMul(0xe, state[3, c]));
         state[0, c] = buffer[0];
         state[1, c] = buffer[1];
         state[2, c] = buffer[2];
