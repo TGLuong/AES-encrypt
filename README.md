@@ -218,7 +218,7 @@ Hàm này thực hiện chức năng xoay trái các hàng ở trong ma trận s
 
 ![ShiftRow](./AES-encrypt/Resources/InvShiftRow.PNG)
 ### 2.2.6 Hàm MixColumnm Và InvMixColumn
-Hàm này thực hiện tính toán trên các cột của ma trận `state`, phép biến đổi được thực hiện dựa trên phép nhân ma trận(thực hiện trên trường GF(2<sup>8</sup>)) sau:</br>
+Hàm này thực hiện tính toán trên các cột của ma trận `state`, phép biến đổi được thực hiện dựa trên phép nhân ma trận(thực hiện trên trường GF(2<sup>8</sup>) sau:</br></br>
 <img src="https://latex.codecogs.com/svg.image?\begin{pmatrix}&space;s^{'}_{0,c}&space;\\s^{'}_{1,c}&space;\\s^{'}_{2,c}&space;\\s^{'}_{3,c}\end{pmatrix}=\begin{pmatrix}&space;02&&space;&space;03&&space;&space;01&&space;&space;01\\&space;01&&space;&space;02&&space;&space;03&&space;&space;01\\&space;01&&space;&space;01&&space;&space;02&&space;&space;03\\&space;03&&space;&space;01&&space;&space;01&&space;&space;02\\\end{pmatrix}\begin{pmatrix}s_{0,c}\\s_{1,c}\\s_{2,c}\\s_{3,c}\end{pmatrix}&space;" title="\begin{pmatrix} s^{'}_{0,c} \\s^{'}_{1,c} \\s^{'}_{2,c} \\s^{'}_{3,c}\end{pmatrix}=\begin{pmatrix} 02& 03& 01& 01\\ 01& 02& 03& 01\\ 01& 01& 02& 03\\ 03& 01& 01& 02\\\end{pmatrix}\begin{pmatrix}s_{0,c}\\s_{1,c}\\s_{2,c}\\s_{3,c}\end{pmatrix} " />
 
 ### 2.2.7 Hàm AddRoundKey
