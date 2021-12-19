@@ -225,7 +225,7 @@ Hay đơn giản hơn là bốn byte trong mỗi cột sẽ được thay thê
 <img src="https://latex.codecogs.com/svg.image?S^{'}_{1,c}=S_{0,c}\oplus&space;(\{02\}\bullet&space;S_{1,c})\oplus&space;(\{03\}\bullet&space;S_{2,c})\oplus&space;S_{3,c}" title="S^{'}_{1,c}=S_{0,c}\oplus (\{02\}\bullet S_{1,c})\oplus (\{03\}\bullet S_{2,c})\oplus S_{3,c}" /></br>
 <img src="https://latex.codecogs.com/svg.image?S^{'}_{2,c}=S_{0,c}\oplus&space;S_{1,c}\oplus&space;(\{02\}\bullet&space;S_{2,c})\oplus&space;(\{03\}\bullet&space;S_{3,c})" title="S^{'}_{2,c}=S_{0,c}\oplus S_{1,c}\oplus (\{02\}\bullet S_{2,c})\oplus (\{03\}\bullet S_{3,c})" /></br>
 <img src="https://latex.codecogs.com/svg.image?S^{'}_{3,c}=(\{03\}\bullet&space;S_{0,c})\oplus&space;S_{1,c}\oplus&space;S_{2,c}\oplus&space;(\{02\}\bullet&space;S_{3,c})" title="S^{'}_{3,c}=(\{03\}\bullet S_{0,c})\oplus S_{1,c}\oplus S_{2,c}\oplus (\{02\}\bullet S_{3,c})" /></br></br>
-Các phép tính ví dụ như: <img src="https://latex.codecogs.com/svg.image?\{02\}\bullet&space;S_{0,c}" title="\{02\}\bullet S_{0,c}" /> chính là phép nhân trên trường GF(2<sup>8</sup>), để thực hiện phép nhân này, ta sử dụng hàm sau:
+Các phép tính ví dụ như: <img src="https://latex.codecogs.com/svg.image?\{02\}\bullet&space;S_{0,c}" title="(\{02\}\bullet S_{0,c})" /> chính là phép nhân trên trường GF(2<sup>8</sup>), để thực hiện phép nhân này, ta sử dụng hàm sau:
 ### 2.2.7 Hàm AddRoundKey
 
 ### 2.2.8 Hàm KeyExpansion
