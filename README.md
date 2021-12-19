@@ -223,6 +223,8 @@ Hàm `MixColumn` này thực hiện tính toán trên các cột của ma trận
 Hay đơn giản hơn là bốn byte trong mỗi cột sẽ được thay thế theo công thức sau: </br> </br>
 <img src="https://latex.codecogs.com/svg.image?S^{'}_{0,c}=(\{02\}&space;\bullet&space;S_{0,c})\oplus&space;(\{03\}\bullet&space;S_{1,c})\oplus&space;S_{2,c}\oplus&space;S_{3,c}" title="S^{'}_{0,c}=(\{02\} \bullet S_{0,c})\oplus (\{03\}\bullet S_{1,c})\oplus S_{2,c}\oplus S_{3,c}" /></br>
 <img src="https://latex.codecogs.com/svg.image?S^{'}_{1,c}=S_{0,c}\oplus&space;(\{02\}\bullet&space;S_{1,c})\oplus&space;(\{03\}\bullet&space;S_{2,c})\oplus&space;S_{3,c}" title="S^{'}_{1,c}=S_{0,c}\oplus (\{02\}\bullet S_{1,c})\oplus (\{03\}\bullet S_{2,c})\oplus S_{3,c}" /></br>
+<img src="https://latex.codecogs.com/svg.image?S^{'}_{2,c}=S_{0,c}\oplus&space;S_{1,c}\oplus&space;(\{02\}\bullet&space;S_{2,c})\oplus&space;(\{03\}\bullet&space;S_{3,c})" title="S^{'}_{2,c}=S_{0,c}\oplus S_{1,c}\oplus (\{02\}\bullet S_{2,c})\oplus (\{03\}\bullet S_{3,c})" /></br>
+<img src="https://latex.codecogs.com/svg.image?S^{'}_{3,c}=(\{03\}\bullet&space;S_{0,c})\oplus&space;S_{1,c}\oplus&space;S_{2,c}\oplus&space;(\{02\}\bullet&space;S_{3,c})" title="S^{'}_{3,c}=(\{03\}\bullet S_{0,c})\oplus S_{1,c}\oplus S_{2,c}\oplus (\{02\}\bullet S_{3,c})" /></br></br>
 
 ### 2.2.7 Hàm AddRoundKey
 
