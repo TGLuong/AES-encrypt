@@ -248,7 +248,7 @@ private byte GMul(byte a, byte b)
 }
 ```
 Hàm trên thực hiện và trả về tích hai số a và b trên trường hữu hạn GF(2<sup>8</sup>).</br>
-Vậy nên hàm MixColumn như sau:
+Vậy nên hàm `MixColumn` như sau:
 ```C#
 private void MixColumns()
 {
@@ -258,7 +258,7 @@ private void MixColumns()
         buffer[0] = (byte)(GMul(0x2, state[0,c]) ^ GMul(0x3, state[1,c]) ^ state[2,c] ^ state[3,c]);
         buffer[1] = (byte)(state[0,c] ^ GMul(0x2, state[1,c]) ^ GMul(0x3, state[2,c]) ^ state[3,c]);
         buffer[2] = (byte)(state[0,c] ^ state[1,c] ^ GMul(0x2, state[2,c]) ^ GMul(0x3, state[3,c]));
-        buffer[3] = (byte)(GMul(0x3. state[0,c]) ^ state[1,c] ^ state[2,c] ^ GMul(0x2, state[3,c]));
+        buffer[3] = (byte)(GMul(0x3, state[0,c]) ^ state[1,c] ^ state[2,c] ^ GMul(0x2, state[3,c]));
         state[0, c] = buffer[0];
         state[1, c] = buffer[1];
         state[2, c] = buffer[2];
