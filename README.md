@@ -255,10 +255,10 @@ private void MixColumns()
     byte[] buffer = new byte[4];
     for (int c = 0; c < 4; c++)
     {
-        buffer[0] = (byte)(GMul(0x2, state[0,c]) ^ GMul(0x3, state[1,c]) ^ state[2,c] ^ state[3,c]);
-        buffer[1] = (byte)(state[0,c] ^ GMul(0x2, state[1,c]) ^ GMul(0x3, state[2,c]) ^ state[3,c]);
-        buffer[2] = (byte)(state[0,c] ^ state[1,c] ^ GMul(0x2, state[2,c]) ^ GMul(0x3, state[3,c]));
-        buffer[3] = (byte)(GMul(0x3, state[0,c]) ^ state[1,c] ^ state[2,c] ^ GMul(0x2, state[3,c]));
+        buffer[0] = (byte)(GMul(0x2, state[0, c]) ^ GMul(0x3, state[1, c]) ^ state[2, c] ^ state[3, c]);
+        buffer[1] = (byte)(state[0, c] ^ GMul(0x2, state[1, c]) ^ GMul(0x3, state[2, c]) ^ state[3, c]);
+        buffer[2] = (byte)(state[0, c] ^ state[1, c] ^ GMul(0x2, state[2, c]) ^ GMul(0x3, state[3, c]));
+        buffer[3] = (byte)(GMul(0x3, state[0, c]) ^ state[1, c] ^ state[2, c] ^ GMul(0x2, state[3, c]));
         state[0, c] = buffer[0];
         state[1, c] = buffer[1];
         state[2, c] = buffer[2];
@@ -273,6 +273,24 @@ Hay đơn giản là: </br></br>
 <img src="https://latex.codecogs.com/svg.image?S^{'}_{1,c}=\(\{09\}\bullet&space;S_{0,c}\)\oplus\(\{0e\}\bullet&space;S_{1,c}\)\oplus\(\{0b\}\bullet&space;S_{2,c}\)\oplus\(\{0d\}\bullet&space;S_{3,c}\)" title="S^{'}_{1,c}=\(\{09\}\bullet S_{0,c}\)\oplus\(\{0e\}\bullet S_{1,c}\)\oplus\(\{0b\}\bullet S_{2,c}\)\oplus\(\{0d\}\bullet S_{3,c}\)" /></br>
 <img src="https://latex.codecogs.com/svg.image?S^{'}_{2,c}=\(\{0d\}\bullet&space;S_{0,c}\)\oplus\(\{09\}\bullet&space;S_{1,c}\)\oplus\(\{0e\}\bullet&space;S_{2,c}\)\oplus\(\{0b\}\bullet&space;S_{3,c}\)" title="S^{'}_{2,c}=\(\{0d\}\bullet S_{0,c}\)\oplus\(\{09\}\bullet S_{1,c}\)\oplus\(\{0e\}\bullet S_{2,c}\)\oplus\(\{0b\}\bullet S_{3,c}\)" /></br>
 <img src="https://latex.codecogs.com/svg.image?S^{'}_{3,c}=\(\{0b\}\bullet&space;S_{0,c}\)\oplus\(\{0d\}\bullet&space;S_{1,c}\)\oplus\(\{09\}\bullet&space;S_{2,c}\)\oplus\(\{0e\}\bullet&space;S_{3,c}\)" title="S^{'}_{3,c}=\(\{0b\}\bullet S_{0,c}\)\oplus\(\{0d\}\bullet S_{1,c}\)\oplus\(\{09\}\bullet S_{2,c}\)\oplus\(\{0e\}\bullet S_{3,c}\)" /></br></br>
+Dựa vào đó ta có hàm `InvMixColumns` như sau:
+```C#
+private void InvMixColumns()
+{
+    byte[] buffer = new byte[4];
+    for (int c = 0; c < 4; c++)
+    {
+        buffer[0] = (byte)(GMul(0xe, state[0, c]) ^ GaloisMul.Mul11[state[1, c]] ^ GaloisMul.Mul13[state[2, c]] ^ GaloisMul.Mul9[state[3, c]]);
+        buffer[1] = (byte)(GaloisMul.Mul9[state[0, c]] ^ GaloisMul.Mul14[state[1, c]] ^ GaloisMul.Mul11[state[2, c]] ^ GaloisMul.Mul13[state[3, c]]);
+        buffer[2] = (byte)(GaloisMul.Mul13[state[0, c]] ^ GaloisMul.Mul9[state[1, c]] ^ GaloisMul.Mul14[state[2, c]] ^ GaloisMul.Mul11[state[3, c]]);
+        buffer[3] = (byte)(GaloisMul.Mul11[state[0, c]] ^ GaloisMul.Mul13[state[1, c]] ^ GaloisMul.Mul9[state[2, c]] ^ GaloisMul.Mul14[state[3, c]]);
+        state[0, c] = buffer[0];
+        state[1, c] = buffer[1];
+        state[2, c] = buffer[2];
+        state[3, c] = buffer[3];
+    }
+}
+```
 ### 2.2.7 Hàm AddRoundKey
 
 ### 2.2.8 Hàm KeyExpansion
