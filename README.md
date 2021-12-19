@@ -247,6 +247,7 @@ private byte GMul(byte a, byte b)
     return p;
 }
 ```
+Hàm trên thực hiện và trả về tích hai số a và b trên trường hữu hạn GF(2<sup>8</sup>)
 ### 2.2.7 Hàm AddRoundKey
 
 ### 2.2.8 Hàm KeyExpansion
